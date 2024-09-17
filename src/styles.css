@@ -1,0 +1,847 @@
+body {
+    background-color: #e4e3e3;
+    font-family:Josefin Sans, sans-serif;
+    margin:0 auto;
+}
+
+#navbar {
+    background-color: #98c1d9;
+    color: white;
+    padding: 10px;
+    width: 100%;
+    display: flex;
+    box-shadow:0px 4px 8px rgba(0, 0, 0, 0.5);
+    position: relative; /* Set position to relative for absolute positioning of icons */
+}
+
+#navbar ul {
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+    display: flex; /* Use flexbox for horizontal layout */
+}
+
+#navbar ul li {
+    margin-right: 20px; /* Adjust spacing as needed */
+}
+
+#navbar ul li:last-child {
+    margin-right: 0; /* Remove margin from the last item */
+}
+
+#nav-elements ul li a {
+    color: white; /* Ensure links are white */
+    text-decoration: none; /* Remove underline from links */
+    padding: 10px 15px; /* Add padding for the colored box effect */
+    background-color: #284b63; /* Background color for the box */
+    border-radius: 5px; /* Rounded corners for the box */
+    display: inline-block; /* Ensure the padding and background apply correctly */
+    font-family: 'Josefin Sans', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+}
+
+#nav-elements ul li a:hover {
+    background-color: #1b3a4b; /* Change background color on hover */
+    text-decoration: none; /* Keep underline removed on hover */
+}
+
+
+#right-icons {
+    position: absolute; /* Position the icons absolutely */
+    top: 45%; /* Adjust the top position as needed */
+    right: 25px; /* Adjust the right position as needed */
+    transform: translateY(-50%); /* Adjust for vertical centering */
+    display: flex; /* Ensure icons are in a row */
+    align-items: center; /* Center icons vertically */
+}
+
+
+#right-icons ul {
+    display: flex; /* Ensure icons are in a row */
+    align-items: center; /* Center icons vertically */
+    padding: 0;
+    margin: 0;
+}
+
+#right-icons li {
+    margin-left: 10px; /* Adjust spacing as needed */
+}
+#linkedin a img {
+    width: 40px; /* Adjust LinkedIn icon size */
+    height: 40px; /* Adjust LinkedIn icon size */
+}
+
+#right-icons li a {
+    padding: 0; /* Remove padding for icons */
+    
+}
+
+#right-icons li a img {
+    width: 24px; /* Adjust icon size */
+    height: 24px; /* Adjust icon size */
+}
+
+
+@media (max-width: 600px) {
+    #navbar {
+        flex-direction: column; /* Stack navbar items vertically */
+        align-items: center; /* Center items */
+    }
+
+    #navbar ul {
+        flex-direction: column; /* Stack list items vertically */
+        align-items: center; /* Center items */
+    }
+
+    #navbar ul li {
+        margin: 10px 0; /* Adjust spacing for vertical layout */
+    }
+
+    #right-icon {
+        position:static;
+        flex-direction: row; /* Keep icons in a row */
+    }
+    #intro-img {
+        flex-direction: column; /* Stack items vertically */
+    }
+
+    #images img {
+        margin-left: 50px; /* Reset margin for smaller screens */
+    }
+}
+
+#first-box{
+    padding:10px;
+    background-color: #98c1d9;
+    margin-top:100px;
+    margin-left:50px;
+    width:50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display:inline-block;
+    height:150px;
+    border-radius:10px;
+    
+}
+h1{
+    font-weight:400;
+    color:#1b3a4b;
+    text-align:center;
+}
+h2{
+    font-weight:300;
+    color:#1b3a4b;
+    text-align:center;
+    
+}
+#intro-img{
+    display:flex;
+}
+#images{
+    padding:10px;
+    margin-top:50px;
+    width:44%;
+}
+
+#images img {
+    width: 400px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin-left:30px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+
+}
+
+#overview{
+    padding:10px;
+    background-color: #e4e3e3;
+    margin-top:-170px;
+    margin-left:50px;
+    width:50%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    height:auto;
+    border-radius:10px;
+    font-weight: 300;
+    color:#1b3a4b;
+    
+}
+.overview-list i {
+    margin-right: 10px; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+
+
+#overview ul {
+    list-style-type: none; /* Remove bullet points */
+    padding: 0; /* Remove default padding */
+    margin: 0; /* Remove default margin */
+}
+.overview-list {
+    display: flex;
+    align-items: flex-start; /* Align items at the start */
+    margin-bottom: 10px; /* Add some space between list items */
+}
+
+#edu-box{
+    background-color: #98c1d9;
+    padding:10px;
+    margin:10px auto;
+    width:80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    
+}
+#edu {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+}
+#edu h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:center;
+    margin-top:120px;
+}
+.school {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+}
+#school{
+    margin-top:30px;
+}
+.school:last-child {
+    margin-bottom: 20px; /* Reduced margin for the last .school element */
+}
+
+.school p{
+    font-weight:300;
+    color:#1b3a4b;
+    text-align:center;
+    margin-bottom:2px;
+}
+.school h2{
+    font-weight:600;
+    color:#1b3a4b;
+}
+
+.school img{
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Maintain aspect ratio */
+    margin-bottom:10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display:inline-block;
+    border-radius:100px;
+    
+
+}
+.experience-box1{
+    background-color: #e4e3e3;
+    padding:10px;
+    margin:30px auto;
+    width:80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    align-items: flex-start;
+    
+}
+#experience {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    font-weight: 900;
+}
+#experience h2{
+    font-weight:600;
+    color:#1b3a4b;
+    margin-top:120px;
+}
+.experience-box1 img{
+        width: 200px; /* Adjust width as needed */
+        height: 200px; /* Maintain aspect ratio */
+        margin-bottom:10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        display:inline-block;
+        border-radius:100px;
+}
+.experience{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin-bottom: 60px;
+    
+}
+.experience-box1 h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:left;
+    
+}
+
+.experience-box1 p {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: left;
+}
+.experience-box1 h2 p {
+    align-items:flex-start;
+    margin-left:20px;
+}
+#job{
+    margin-left: 20px;
+    margin-bottom:2px;
+}
+#position{
+    font-weight: 300;
+    color: #1b3a4b;
+    margin-bottom:2px;
+}
+#date{
+    font-weight: 300;
+    color: #1b3a4b;
+    font-size: 18px;
+}
+#job-institute{
+    margin-bottom:2px;
+}
+
+.experience-box2{
+    background-color: #e4e3e3;
+    padding:10px;
+    margin:30px auto;
+    width:80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    align-items: flex-start;
+    
+}
+.experience-box2 img{
+        width: 200px; /* Adjust width as needed */
+        height: 200px; /* Maintain aspect ratio */
+        margin-bottom:10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        display:inline-block;
+        border-radius:100px;
+}
+.experience-box2 h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:left;
+    
+}
+
+.experience-box2 p {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: left;
+}
+.experience-box2 h2 p {
+    align-items:flex-start;
+    margin-left:20px;
+}
+
+
+.experience-box3{
+    background-color: #e4e3e3;
+    padding:10px;
+    margin:10px auto;
+    width:80%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    align-items: flex-start;
+    
+}
+.experience-box3 img{
+        width: 200px; /* Adjust width as needed */
+        height: 200px; /* Maintain aspect ratio */
+        margin-bottom:10px;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        display:inline-block;
+        border-radius:100px;
+}
+.experience-box3 h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:left;
+    
+}
+
+.experience-box3 p {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: left;
+}
+.experience-box3 h2 p {
+    align-items:flex-start;
+    margin-left:20px;
+}
+.experience-box3 img{
+    width: 200px; /* Adjust width as needed */
+    height: 200px; /* Maintain aspect ratio */
+    margin-bottom:10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display:inline-block;
+    border-radius:100px;
+    
+    
+
+}
+#skills-box h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:center;
+    margin-top:120px;
+    margin-bottom: 70px;
+    
+    
+}
+.skill-list h3{
+    font-weight:500;
+    color:#1b3a4b;
+    text-align:center;
+    margin-bottom:2px;
+    
+    
+}
+
+#languages ul {
+    display: flex; /* Use flexbox for the ul */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: space-around; /* Distribute items evenly */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+}
+
+
+
+#languages li {
+    display: flex; /* Use flexbox for the li */
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    margin: 30px; /* Adjust spacing between items */
+    
+}
+
+#languages img {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+    margin-right: 15px; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+#languages  p {
+    display: block; /* Ensure the text is a block element */
+    text-align: center; /* Center the text */
+}
+#lan{
+   flex-direction: column ;
+    align-items: center;
+    align-items: center; /* Center items horizontally */
+    margin: 10px; /* Adjust spacing between items */
+
+}
+#lan img {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+#lan p {
+    display: block; /* Ensure the text is a block element */
+    text-align:left; /* Center the text */
+    font-weight:800;
+    margin-left:-15px;
+}
+
+
+
+
+#tools ul {
+    display: flex; /* Use flexbox for the ul */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    justify-content: space-around; /* Distribute items evenly */
+    padding: 0;
+    margin: 0;
+    list-style: none; /* Remove default list styling */
+}
+
+
+
+#tools li {
+    display: flex; /* Use flexbox for the li */
+    flex-direction: column; /* Stack icon and text vertically */
+    align-items: center; /* Center items horizontally */
+    margin: 30px; /* Adjust spacing between items */
+    
+}
+
+#tools img {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+    margin-right: 15px; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+#tools  p {
+    display: block; /* Ensure the text is a block element */
+    text-align: center; /* Center the text */
+    margin-top:10px;
+}
+#to{
+   flex-direction: column ;
+    align-items: center;
+    align-items: center; /* Center items horizontally */
+    margin: 10px; /* Adjust spacing between items */
+
+}
+#to img {
+    width: 50px; /* Adjust width as needed */
+    height: 50px; /* Maintain aspect ratio */
+    margin-bottom: 10px; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+#to p {
+    display: block; /* Ensure the text is a block element */
+    text-align:left; /* Center the text */
+    font-weight:800;
+    margin-left:-15px;
+}
+
+
+
+#contact-icon{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:100px auto;
+}
+
+
+#bottom-bar{
+    background-color: #98c1d9;
+    width:100%;
+    display:flex;
+    margin-top: 100px;
+    padding: 10px;
+    box-shadow: 8px 4px 2px rgba(0, 0, 0, 0.5);
+    height:auto;
+    
+
+}
+#bottom-bar p{
+    font-weight:300;
+    color:#1b3a4b;
+    text-align:center;
+    margin:0 auto;
+    font-size: 12px;
+}
+
+.contact-box{
+    background-color: #98c1d9;
+    padding:10px;
+    margin:80px auto;
+    width:70%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.contact-box h1{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:center;
+    
+}
+.social-media {
+    display: flex; /* Use flexbox for the container */
+    flex-direction: column;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-wrap: wrap; /* Allow items to wrap if necessary */
+}
+.social-media img{
+    width: 80px; /* Adjust width as needed */
+    height: 80px; /* Maintain aspect ratio */
+    margin: 20px auto; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+    display:inline-block;
+
+}
+.social-media p{
+    margin-top:15px;
+}
+#link p{
+    font-weight:800;
+    color:#1b3a4b;
+    text-align:center;
+    margin:0 auto;
+    font-size: 15px;
+}
+
+
+#ggithub p{
+    font-weight:800;
+    color:#1b3a4b;
+    text-align:center;
+    margin:0 auto;
+    font-size: 15px;
+}
+
+
+#instagram p{
+    font-weight:800;
+    color:#1b3a4b;
+    text-align:center;
+    margin:0 auto;
+    font-size: 15px;
+}
+.form-box{
+    background-color: #e4e3e3;
+    padding:10px;
+    margin:80px auto;
+    width:60%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+.formi{
+    background-color: #e4e3e3;
+    padding:10px;
+    margin:20px auto;
+    width:60%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display:flex;
+    align-items: center;
+    justify-content:center;
+}
+
+#application-form div{
+    display: flex;
+    flex-direction: column;
+    margin-bottom: 20px;
+
+}
+.form-group label {
+    font-size: 18px; /* Adjust font size as needed */
+    font-weight: bold; /* Make the label bold */
+    color: #1b3a4b; /* Adjust color as needed */
+    display: block; /* Ensure the label is a block element */
+    margin-bottom: 10px; /* Add some space below the label */
+    margin-top: 20px;
+    text-align: center;
+}
+
+.form-group input{
+    width: 100%; /* Ensure the input takes up the full width */
+    padding: 10px; /* Add padding for better readability */
+    font-size: 16px; /* Adjust font size as needed */
+    border-radius: 5px; /* Add rounded corners */
+    border: 1px solid #1b3a4b; /* Add a border */
+    
+}
+.form-group textarea{
+    width: 100%; /* Ensure the input takes up the full width */
+    padding: 10px; /* Add padding for better readability */
+    font-size: 16px; /* Adjust font size as needed */
+    border-radius: 5px; /* Add rounded corners */
+    border: 1px solid #1b3a4b; /* Add a border */
+}
+
+.form-group button{
+    width: 105%; /* Ensure the input takes up the full width */
+    padding: 10px; /* Add padding for better readability */
+    font-size: 16px; /* Adjust font size as needed */
+    border-radius: 5px; /* Add rounded corners */
+    border: 2px solid #1b3a4b; /* Add a border */
+    background-color: #98c1d9; /* Add a background color */
+    color: #1b3a4b; /* Adjust text color */
+    cursor: pointer; /* Add a pointer cursor on hover */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    margin-top: 20px;
+}
+
+.intro-talk{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:100px auto;
+    width:70%;
+}
+.intro-talk h1{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:center;
+    
+}
+.intro-talk p{
+    font-weight:300;
+    color:#1b3a4b;
+    text-align:center;
+    margin-top:20px;
+}
+
+#ext h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:center;
+    margin-top:120px;
+    margin-bottom: 70px;
+}
+.extra-cul {
+    display: flex; /* Use flexbox for the container */
+    justify-content: space-around; /* Distribute items evenly */
+    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
+    align-items: center; /* Center items vertically */
+    margin: 20px auto; /* Center the container horizontally */
+    width: 100%; /* Full width of the container */
+}
+
+.extra-cul div {
+    background-color: #e4e3e3;
+    padding: 10px;
+    margin: 20px;
+    width: 25%; /* Adjust width as needed */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    border-radius: 20px;
+    flex-direction: column;
+}
+.cl{
+    background-color: #98c1d9;
+    padding:10px;
+    margin:20px auto;
+    width: 25%; /* Adjust width as needed */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center; /* Center content horizontally */
+    border-radius: 20px;
+    flex-direction: column;
+}
+.ccc{
+    display:flex;
+    flex-direction: row;
+    align-items: center;
+    margin:20px auto;
+}
+.cl h4,p{
+    text-align: center;
+}
+#des{
+    text-align: left;
+    font-weight:300
+}
+
+.inn{
+    display:flex;
+    flex-direction: row;
+    align-items: flex-start; /* Align items at the start of the container */
+    margin:20px auto;
+    width:100%;
+    justify-content: space-around;
+}
+#lala img {
+    max-width: 20px; /* Ensure the image scales within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin:20px auto;
+}
+#bdd img{
+    max-width: 60px; /* Ensure the image scales within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin:5px auto;
+}
+#frfr{
+    
+        width: 60px; /* Adjust width as needed */
+        height: 60px; /* Adjust height as needed */
+        margin: 5px; /* Add some space around the images */
+        flex-shrink: 0; /* Prevent the images from shrinking */
+}
+#fav-food img {
+    width: 60px; /* Ensure the image scales within its container */
+    height: auto; /* Maintain aspect ratio */
+    margin:10px auto;
+    flex-shrink: 0; /* Prevent the image from shrinking */
+}
+.inn > div {
+    flex: 1; /* Allow each child div to grow equally */
+    margin: 0 10px; /* Add some horizontal spacing between the divs */
+}
+
+.inn h2 {
+    text-align: center; /* Center align all h2 elements within .inn */
+    margin: 10px 0; /* Add some margin for spacing */
+    font-size: 24px; /* Adjust font size as needed */
+    color: #1b3a4b; /* Adjust color as needed */
+}
+
+
+.french {
+    display: flex;
+    flex-direction: row;
+}
+
+.img-aln{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:20px auto;
+    width:100%;
+    justify-content: space-around;
+}
+
+.french img{
+    width:30px;
+    height:30px;
+    margin:10px;
+}
+
+#biri img{
+    width: 60px; /* Adjust width as needed */
+    height: auto; /* Maintain aspect ratio */
+    margin: 10px auto; /* Add some space between the icon and the text */
+    flex-shrink: 0; /* Prevent the icon from shrinking */
+}
+
+#i-live h2{
+    text-align: center; /* Center align all h2 elements within .inn */
+    margin: 10px auto; /* Add some margin for spacing */
+    font-size: 24px; /* Adjust font size as needed */
+    color: #1b3a4b; /* Adjust color as needed */
+}
+
+#i-live{
+    display:flex;
+    flex-direction: column;
+    align-items: center;
+    margin:30px auto;
+    width:100%;
+    justify-content: space-around;
+}
+#ussa img{
+    margin-top:-25px;
+}
+.intro-talk h1{
+    background-color: #98c1d9;
+    padding:10px;
+    margin:20px auto;
+    width:40%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+}
+
+#hobbies h2{
+    font-weight:600;
+    color:#1b3a4b;
+    text-align:center;
+    margin-top:120px;
+    margin-bottom: 70px;
+}
