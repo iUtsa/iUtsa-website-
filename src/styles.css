@@ -883,3 +883,12 @@ h2{
 #hoo{
     margin-top: 40px;
 }
+.extra-cul li{
+    margin-top:8px;
+    padding:8px;
+}
+
+#crs{
+    margin:100px auto;
+    font-weight:600;
+}
