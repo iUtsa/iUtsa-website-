@@ -1,9 +1,11 @@
 body {
     background-color: #e4e3e3;
-    font-family:Josefin Sans, sans-serif;
-    margin:0 auto;
-    background-image:url('https://images.unsplash.com/photo-1546525012-4f79313b6de6?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
-    
+    font-family: Josefin Sans, sans-serif;
+    margin: 0;
+    background-image: url('https://images.unsplash.com/photo-1546525012-4f79313b6de6?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
+    width: 100%;
+
+
 }
 
 #navbar {
@@ -11,274 +13,450 @@ body {
     color: white;
     padding: 10px;
     width: 100%;
+    justify-content: space-between;
     display: flex;
-    box-shadow:0px 4px 8px rgba(0, 0, 0, 0.5);
-    position: relative; /* Set position to relative for absolute positioning of icons */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    position: fixed;
+    top: 0;
+    /* Set position to relative for absolute positioning of icons */
 }
 
 #navbar ul {
     list-style-type: none;
     padding: 0;
     margin: 0;
-    display: flex; /* Use flexbox for horizontal layout */
+    display: flex;
+    /* Use flexbox for horizontal layout */
 }
 
 #navbar ul li {
-    margin-right: 20px; /* Adjust spacing as needed */
+    margin-right: 16px;
+    /* Adjust spacing as needed */
 }
 
 #navbar ul li:last-child {
-    margin-right: 0; /* Remove margin from the last item */
+    margin-right: 0;
+    /* Remove margin from the last item */
 }
 
 #nav-elements ul li a {
-    color: white; /* Ensure links are white */
-    text-decoration: none; /* Remove underline from links */
-    padding: 10px 15px; /* Add padding for the colored box effect */
-    background-color: #284b63; /* Background color for the box */
-    border-radius: 5px; /* Rounded corners for the box */
-    display: inline-block; /* Ensure the padding and background apply correctly */
+    color: white;
+    /* Ensure links are white */
+    text-decoration: none;
+    /* Remove underline from links */
+    padding: 10px 15px;
+    /* Add padding for the colored box effect */
+    background-color: #284b63;
+    /* Background color for the box */
+    border-radius: 5px;
+    /* Rounded corners for the box */
+    display: inline-block;
+    /* Ensure the padding and background apply correctly */
     font-family: 'Josefin Sans', sans-serif;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #nav-elements ul li a:hover {
-    background-color: #1b3a4b; /* Change background color on hover */
-    text-decoration: none; /* Keep underline removed on hover */
+    background-color: #1b3a4b;
+    /* Change background color on hover */
+    text-decoration: none;
+    /* Keep underline removed on hover */
 }
 
 
 #right-icons {
-    position: absolute; /* Position the icons absolutely */
-    top: 45%; /* Adjust the top position as needed */
-    right: 25px; /* Adjust the right position as needed */
-    transform: translateY(-50%); /* Adjust for vertical centering */
-    display: flex; /* Ensure icons are in a row */
-    align-items: center; /* Center icons vertically */
+    position: absolute;
+    /* Position the icons absolutely */
+    top: 50%;
+    /* Adjust the top position as needed */
+    right: 25px;
+    /* Adjust the right position as needed */
+    transform: translateY(-50%);
+    /* Adjust for vertical centering */
+    display: flex;
+    /* Ensure icons are in a row */
+    align-items: center;
+    /* Center icons vertically */
 }
 
 
 #right-icons ul {
-    display: flex; /* Ensure icons are in a row */
-    align-items: center; /* Center icons vertically */
+    display: flex;
+    /* Ensure icons are in a row */
+    align-items: center;
+    /* Center icons vertically */
     padding: 0;
     margin: 0;
 }
 
 #right-icons li {
-    margin-left: 10px; /* Adjust spacing as needed */
+    margin-left: 10px;
+    /* Adjust spacing as needed */
 }
+
 #linkedin a img {
-    width: 40px; /* Adjust LinkedIn icon size */
-    height: 40px; /* Adjust LinkedIn icon size */
+    width: 40px;
+    /* Adjust LinkedIn icon size */
+    height: 40px;
+    /* Adjust LinkedIn icon size */
 }
 
 #right-icons li a {
-    padding: 0; /* Remove padding for icons */
-    
+    padding: 0;
+    /* Remove padding for icons */
+
 }
 
 #right-icons li a img {
-    width: 24px; /* Adjust icon size */
-    height: 24px; /* Adjust icon size */
+    width: 24px;
+    /* Adjust icon size */
+    height: 24px;
+    /* Adjust icon size */
 }
 
 
-@media (max-width: 600px) {
+@media (max-width: 667px) {
     #navbar {
-        flex-direction: column; /* Stack navbar items vertically */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        /* Stack navbar items vertically */
+        align-items: left;
+        /* Center items */
+        width: 100%;
+        height: auto;
+        position:absolute;
+        top: 0;
+        left: 0;
+
+
     }
 
     #navbar ul {
-        flex-direction: column; /* Stack list items vertically */
-        align-items: center; /* Center items */
+        flex-direction: column;
+        /* Stack list items vertically */
+        align-items: flex-start;
+        /* Center items */
+        display: grid;
+        grid-template-columns: repeat(3, 1fr);
+        /* 3 items per row */
+        gap: 2px;
+        /* Space between items */
     }
 
     #navbar ul li {
-        margin: 10px 0; /* Adjust spacing for vertical layout */
+        margin: 3px 0;
+        /* Adjust spacing for vertical layout */
     }
 
-    #right-icon {
-        position:static;
-        flex-direction: row; /* Keep icons in a row */
+    #right-icons ul {
+        display: flex;
+        flex-direction: column;
+        /* Keep icons in a row */
+        align-items: flex-end;
+        /* Align icons at the bottom */
+        position: static;
+        grid-template-columns: repeat(1, 1fr);
+        /* 1 items per row */
+        gap: 5px;
+        /* Space between items */
+
     }
+
     #intro-img {
-        flex-direction: column; /* Stack items vertically */
+        margin:300px auto;
+        flex-direction: column;
+        /* Stack items vertically */
+
     }
 
     #images img {
-        margin-left: 50px; /* Reset margin for smaller screens */
+        margin-left: 50px;
+        /* Reset margin for smaller screens */
     }
+
+    #overview {
+        flex-direction: column;
+        /* Stack items vertically */
+        padding: 10px;
+        background-color: #e4e3e3;
+        margin-top: 100px;
+        margin-left: 50px;
+        width: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        height: auto;
+        border-radius: 10px;
+        font-weight: 300;
+        color: #1b3a4b;
+
+    }
+
+    .experience-box1 {
+        display: flex;
+        flex-direction: column;
+        /* Stack items vertically */
+        padding: 10px;
+        background-color: #e4e3e3;
+        margin-top: 100px;
+        margin-left: 50px;
+        width: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        height: auto;
+        border-radius: 10px;
+        font-weight: 300;
+        color: #1b3a4b;
+    }
+
+    .experience-box2 {
+        display: flex;
+        flex-direction: column;
+        /* Stack items vertically */
+        padding: 10px;
+        background-color: #e4e3e3;
+        margin-top: 100px;
+        margin-left: 50px;
+        width: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        height: auto;
+        border-radius: 10px;
+        font-weight: 300;
+        color: #1b3a4b;
+    }
+
+    .experience-box3 {
+        display: flex;
+        flex-direction: column;
+        /* Stack items vertically */
+        padding: 10px;
+        background-color: #e4e3e3;
+        margin-top: 100px;
+        margin-left: 50px;
+        width: 50%;
+        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+        height: auto;
+        border-radius: 10px;
+        font-weight: 300;
+        color: #1b3a4b;
+    }
+
+    #bottom-bar {
+        background-color: #98c1d9;
+        width: 100%;
+        display: flex;
+        margin-top: 100px;
+        padding: 10px;
+        box-shadow: 8px 4px 2px rgba(0, 0, 0, 0.5);
+        height: auto;
+        position: relative; /* Fix the bottom bar to the viewport */
+        bottom: 0; /* Position it at the bottom */
+        left: 0; /* Ensure it spans the full width */
+        flex-wrap: wrap;
+        align-items: flex-start;
+        justify-content: center;
+
+
+    
+    
+    }
+
 }
 
-#first-box{
-    padding:10px;
+#first-box {
+    padding: 5px;
     background-color: #98c1d9;
-    margin-top:100px;
-    margin-left:50px;
-    width:50%;
+    width: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display:inline-block;
-    height:150px;
-    border-radius:10px;
-    
+    height: auto;
+    border-radius: 10px;
+    flex-wrap: wrap;
+    margin:80px auto;
+
 }
-h1{
-    font-weight:400;
-    color:#1b3a4b;
-    text-align:center;
+
+h1 {
+    font-weight: 400;
+    color: #1b3a4b;
+    text-align: center;
 }
-h2{
-    font-weight:300;
-    color:#1b3a4b;
-    text-align:center;
-    
+
+h2 {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: center;
+
 }
-#intro-img{
-    display:flex;
+
+#intro-img {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 30px auto;
 }
-#images{
-    padding:10px;
-    margin-top:50px;
-    width:44%;
-}
+
 
 #images img {
-    width: 400px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin-left:30px;
+    width: 300px;
+    /* Adjust width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 20px auto;
+    /* Add some space around the image */
+
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 
 }
 
-#overview{
-    padding:10px;
+#overview {
+    align-items: center;
+    padding: 10px;
     background-color: #e4e3e3;
-    margin-top:-170px;
-    margin-left:50px;
-    width:50%;
+    margin: 10px auto;
+    width: 50%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    height:auto;
-    border-radius:10px;
+    height: auto;
+    border-radius: 10px;
     font-weight: 300;
-    color:#1b3a4b;
-    
+    color: #1b3a4b;
+
 }
+
 .overview-list i {
-    margin-right: 10px; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
+    margin-right: 10px;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
 }
 
 
 #overview ul {
-    list-style-type: none; /* Remove bullet points */
-    padding: 0; /* Remove default padding */
-    margin: 0; /* Remove default margin */
-}
-.overview-list {
-    display: flex;
-    align-items: flex-start; /* Align items at the start */
-    margin-bottom: 10px; /* Add some space between list items */
+    list-style-type: none;
+    /* Remove bullet points */
+    padding: 0;
+    /* Remove default padding */
+    margin: 0;
+    /* Remove default margin */
 }
 
-#edu-box{
+.overview-list {
+    display: flex;
+    align-items: flex-start;
+    /* Align items at the start */
+    margin-bottom: 10px;
+    /* Add some space between list items */
+}
+
+#edu-box {
     background-color: #98c1d9;
-    padding:10px;
-    margin:10px auto;
-    width:80%;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    
+
 }
+
 #edu {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: 900;
 }
-#edu h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    margin-top:120px;
+
+#edu h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+    margin-top: 120px;
 }
+
 .school {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
 }
-#school{
-    margin-top:30px;
+
+#school {
+    margin-top: 30px;
 }
+
 .school:last-child {
-    margin-bottom: 20px; /* Reduced margin for the last .school element */
+    margin-bottom: 20px;
+    /* Reduced margin for the last .school element */
 }
 
-.school p{
-    font-weight:300;
-    color:#1b3a4b;
-    text-align:center;
-    margin-bottom:2px;
-}
-.school h2{
-    font-weight:600;
-    color:#1b3a4b;
+.school p {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: center;
+    margin-bottom: 2px;
 }
 
-.school img{
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Maintain aspect ratio */
-    margin-bottom:10px;
+.school h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+}
+
+.school img {
+    width: 200px;
+    /* Adjust width as needed */
+    height: 200px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display:inline-block;
-    border-radius:100px;
-    
+    display: inline-block;
+    border-radius: 100px;
+
 
 }
-.experience-box1{
+
+.experience-box1 {
     background-color: #e4e3e3;
-    padding:10px;
-    margin:30px auto;
-    width:80%;
+    padding: 10px;
+    margin: 30px auto;
+    width: 80%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     align-items: flex-start;
-    
+
 }
+
 #experience {
     display: flex;
     flex-direction: column;
     align-items: center;
     font-weight: 900;
 }
-#experience h2{
-    font-weight:600;
-    color:#1b3a4b;
-    margin-top:120px;
+
+#experience h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    margin-top: 120px;
 }
-.experience-box1 img{
-        width: 200px; /* Adjust width as needed */
-        height: 200px; /* Maintain aspect ratio */
-        margin-bottom:10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-        display:inline-block;
-        border-radius:100px;
+
+.experience-box1 img {
+    width: 200px;
+    /* Adjust width as needed */
+    height: 200px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-radius: 100px;
 }
-.experience{
+
+.experience {
     display: flex;
     flex-direction: column;
     align-items: center;
     margin-bottom: 60px;
-    
+
 }
-.experience-box1 h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:left;
-    
+
+.experience-box1 h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: left;
+
 }
 
 .experience-box1 p {
@@ -286,52 +464,61 @@ h2{
     color: #1b3a4b;
     text-align: left;
 }
+
 .experience-box1 h2 p {
-    align-items:flex-start;
-    margin-left:20px;
-}
-#job{
+    align-items: flex-start;
     margin-left: 20px;
-    margin-bottom:2px;
 }
-#position{
+
+#job {
+    margin-left: 20px;
+    margin-bottom: 2px;
+}
+
+#position {
     font-weight: 300;
     color: #1b3a4b;
-    margin-bottom:2px;
+    margin-bottom: 2px;
 }
-#date{
+
+#date {
     font-weight: 300;
     color: #1b3a4b;
     font-size: 18px;
 }
-#job-institute{
-    margin-bottom:2px;
+
+#job-institute {
+    margin-bottom: 2px;
 }
 
-.experience-box2{
+.experience-box2 {
     background-color: #e4e3e3;
-    padding:10px;
-    margin:30px auto;
-    width:80%;
+    padding: 10px;
+    margin: 30px auto;
+    width: 80%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     align-items: flex-start;
-    
+
 }
-.experience-box2 img{
-        width: 200px; /* Adjust width as needed */
-        height: 200px; /* Maintain aspect ratio */
-        margin-bottom:10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-        display:inline-block;
-        border-radius:100px;
+
+.experience-box2 img {
+    width: 200px;
+    /* Adjust width as needed */
+    height: 200px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-radius: 100px;
 }
-.experience-box2 h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:left;
-    
+
+.experience-box2 h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: left;
+
 }
 
 .experience-box2 p {
@@ -339,36 +526,41 @@ h2{
     color: #1b3a4b;
     text-align: left;
 }
+
 .experience-box2 h2 p {
-    align-items:flex-start;
-    margin-left:20px;
+    align-items: flex-start;
+    margin-left: 20px;
 }
 
 
-.experience-box3{
+.experience-box3 {
     background-color: #e4e3e3;
-    padding:10px;
-    margin:10px auto;
-    width:80%;
+    padding: 10px;
+    margin: 10px auto;
+    width: 80%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     align-items: flex-start;
-    
+
 }
-.experience-box3 img{
-        width: 200px; /* Adjust width as needed */
-        height: 200px; /* Maintain aspect ratio */
-        margin-bottom:10px;
-        box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-        display:inline-block;
-        border-radius:100px;
+
+.experience-box3 img {
+    width: 200px;
+    /* Adjust width as needed */
+    height: 200px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: inline-block;
+    border-radius: 100px;
 }
-.experience-box3 h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:left;
-    
+
+.experience-box3 h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: left;
+
 }
 
 .experience-box3 p {
@@ -376,413 +568,593 @@ h2{
     color: #1b3a4b;
     text-align: left;
 }
+
 .experience-box3 h2 p {
-    align-items:flex-start;
-    margin-left:20px;
+    align-items: flex-start;
+    margin-left: 20px;
 }
-.experience-box3 img{
-    width: 200px; /* Adjust width as needed */
-    height: 200px; /* Maintain aspect ratio */
-    margin-bottom:10px;
+
+.experience-box3 img {
+    width: 200px;
+    /* Adjust width as needed */
+    height: 200px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display:inline-block;
-    border-radius:100px;
-    
-    
+    display: inline-block;
+    border-radius: 100px;
+
+
 
 }
-#skills-box h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    margin-top:120px;
+
+#skills-box h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+    margin-top: 120px;
     margin-bottom: 70px;
-    
-    
+
+
 }
-.skill-list h3{
-    font-weight:500;
-    color:#1b3a4b;
-    text-align:center;
-    margin-bottom:2px;
-    
-    
+
+.skill-list h3 {
+    font-weight: 500;
+    color: #1b3a4b;
+    text-align: center;
+    margin-bottom: 2px;
+
+
 }
 
 #languages ul {
-    display: flex; /* Use flexbox for the ul */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
-    justify-content: space-around; /* Distribute items evenly */
+    display: flex;
+    /* Use flexbox for the ul */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if necessary */
+    justify-content: space-around;
+    /* Distribute items evenly */
     padding: 0;
     margin: 0;
-    list-style: none; /* Remove default list styling */
+    list-style: none;
+    /* Remove default list styling */
 }
 
 
 
 #languages li {
-    display: flex; /* Use flexbox for the li */
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center; /* Center items horizontally */
-    margin: 30px; /* Adjust spacing between items */
-    
+    display: flex;
+    /* Use flexbox for the li */
+    flex-direction: column;
+    /* Stack icon and text vertically */
+    align-items: center;
+    /* Center items horizontally */
+    margin: 30px;
+    /* Adjust spacing between items */
+
 }
 
 #languages img {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Maintain aspect ratio */
-    margin-right: 15px; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
+    width: 50px;
+    /* Adjust width as needed */
+    height: 50px;
+    /* Maintain aspect ratio */
+    margin-right: 15px;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
 }
-#languages  p {
-    display: block; /* Ensure the text is a block element */
-    text-align: center; /* Center the text */
+
+#languages p {
+    display: block;
+    /* Ensure the text is a block element */
+    text-align: center;
+    /* Center the text */
 }
-#lan{
-   flex-direction: column ;
+
+#lan {
+    flex-direction: column;
     align-items: center;
-    align-items: center; /* Center items horizontally */
-    margin: 10px; /* Adjust spacing between items */
+    align-items: center;
+    /* Center items horizontally */
+    margin: 10px;
+    /* Adjust spacing between items */
 
 }
+
 #lan img {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
+    width: 50px;
+    /* Adjust width as needed */
+    height: 50px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
 }
+
 #lan p {
-    display: block; /* Ensure the text is a block element */
-    text-align:left; /* Center the text */
-    font-weight:800;
-    margin-left:-15px;
+    display: block;
+    /* Ensure the text is a block element */
+    text-align: left;
+    /* Center the text */
+    font-weight: 800;
+    margin-left: -15px;
 }
 
 
 
 
 #tools ul {
-    display: flex; /* Use flexbox for the ul */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
-    justify-content: space-around; /* Distribute items evenly */
+    display: flex;
+    /* Use flexbox for the ul */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if necessary */
+    justify-content: space-around;
+    /* Distribute items evenly */
     padding: 0;
     margin: 0;
-    list-style: none; /* Remove default list styling */
+    list-style: none;
+    /* Remove default list styling */
 }
 
 
 
 #tools li {
-    display: flex; /* Use flexbox for the li */
-    flex-direction: column; /* Stack icon and text vertically */
-    align-items: center; /* Center items horizontally */
-    margin: 30px; /* Adjust spacing between items */
-    
+    display: flex;
+    /* Use flexbox for the li */
+    flex-direction: column;
+    /* Stack icon and text vertically */
+    align-items: center;
+    /* Center items horizontally */
+    margin: 30px;
+    /* Adjust spacing between items */
+
 }
 
 #tools img {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Maintain aspect ratio */
-    margin-right: 15px; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
-}
-#tools  p {
-    display: block; /* Ensure the text is a block element */
-    text-align: center; /* Center the text */
-    margin-top:10px;
-}
-#to{
-   flex-direction: column ;
-    align-items: center;
-    align-items: center; /* Center items horizontally */
-    margin: 10px; /* Adjust spacing between items */
-
-}
-#to img {
-    width: 50px; /* Adjust width as needed */
-    height: 50px; /* Maintain aspect ratio */
-    margin-bottom: 10px; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
-}
-#to p {
-    display: block; /* Ensure the text is a block element */
-    text-align:left; /* Center the text */
-    font-weight:800;
-    margin-left:-15px;
+    width: 50px;
+    /* Adjust width as needed */
+    height: 50px;
+    /* Maintain aspect ratio */
+    margin-right: 15px;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
 }
 
+#tools p {
+    display: block;
+    /* Ensure the text is a block element */
+    text-align: center;
+    /* Center the text */
+    margin-top: 10px;
+}
 
-
-#contact-icon{
-    display:flex;
+#to {
     flex-direction: column;
     align-items: center;
-    margin:100px auto;
+    align-items: center;
+    /* Center items horizontally */
+    margin: 10px;
+    /* Adjust spacing between items */
+
+}
+
+#to img {
+    width: 50px;
+    /* Adjust width as needed */
+    height: 50px;
+    /* Maintain aspect ratio */
+    margin-bottom: 10px;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
+}
+
+#to p {
+    display: block;
+    /* Ensure the text is a block element */
+    text-align: left;
+    /* Center the text */
+    font-weight: 800;
+    margin-left: -15px;
 }
 
 
-#bottom-bar{
+
+#contact-icon {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 100px auto;
+}
+
+
+#bottom-bar {
     background-color: #98c1d9;
-    width:100%;
-    display:flex;
+    width: 100%;
+    display: flex;
     margin-top: 100px;
     padding: 10px;
     box-shadow: 8px 4px 2px rgba(0, 0, 0, 0.5);
-    height:auto;
-    
+    height: auto;
+    position: relative; /* Fix the bottom bar to the viewport */
+    bottom: 0; /* Position it at the bottom */
+    left: 0; /* Ensure it spans the full width */
+
 
 }
-#bottom-bar p{
-    font-weight:300;
-    color:#1b3a4b;
-    text-align:center;
-    margin:0 auto;
+
+#bottom-bar p {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: center;
+    margin: 0 auto;
     font-size: 12px;
 }
 
-.contact-box{
+.contact-box {
     background-color: #98c1d9;
-    padding:10px;
-    margin:80px auto;
-    width:70%;
+    padding: 10px;
+    margin: 80px auto;
+    width: 70%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
-.contact-box h1{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    
+
+.contact-box h1 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+
 }
+
 .social-media {
-    display: flex; /* Use flexbox for the container */
+    display: flex;
+    /* Use flexbox for the container */
     flex-direction: column;
-    justify-content: center; /* Center items horizontally */
-    align-items: center; /* Center items vertically */
-    flex-wrap: wrap; /* Allow items to wrap if necessary */
+    justify-content: center;
+    /* Center items horizontally */
+    align-items: center;
+    /* Center items vertically */
+    flex-wrap: wrap;
+    /* Allow items to wrap if necessary */
 }
-.social-media img{
-    width: 80px; /* Adjust width as needed */
-    height: 80px; /* Maintain aspect ratio */
-    margin: 20px auto; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
-    display:inline-block;
+
+.social-media img {
+    width: 80px;
+    /* Adjust width as needed */
+    height: 80px;
+    /* Maintain aspect ratio */
+    margin: 20px auto;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
+    display: inline-block;
 
 }
-.social-media p{
-    margin-top:15px;
+
+.social-media p {
+    margin-top: 15px;
 }
-#link p{
-    font-weight:800;
-    color:#1b3a4b;
-    text-align:center;
-    margin:0 auto;
+
+#link p {
+    font-weight: 800;
+    color: #1b3a4b;
+    text-align: center;
+    margin: 0 auto;
     font-size: 15px;
 }
 
 
-#ggithub p{
-    font-weight:800;
-    color:#1b3a4b;
-    text-align:center;
-    margin:0 auto;
+#ggithub p {
+    font-weight: 800;
+    color: #1b3a4b;
+    text-align: center;
+    margin: 0 auto;
     font-size: 15px;
 }
 
 
-#instagram p{
-    font-weight:800;
-    color:#1b3a4b;
-    text-align:center;
-    margin:0 auto;
+#instagram p {
+    font-weight: 800;
+    color: #1b3a4b;
+    text-align: center;
+    margin: 0 auto;
     font-size: 15px;
 }
-.form-box{
+
+.form-box {
     background-color: #e4e3e3;
-    padding:10px;
-    margin:80px auto;
-    width:60%;
+    padding: 10px;
+    margin: 80px auto;
+    width: 60%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    display:flex;
+    display: flex;
     align-items: center;
-    justify-content:center;
-}
-.formi{
-    background-color: #e4e3e3;
-    padding:10px;
-    margin:20px auto;
-    width:60%;
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    border-radius: 20px;
-    display:flex;
-    align-items: center;
-    justify-content:center;
+    justify-content: center;
 }
 
-#application-form div{
+.formi {
+    background-color: #e4e3e3;
+    padding: 10px;
+    margin: 20px auto;
+    width: 60%;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    border-radius: 20px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+#application-form div {
     display: flex;
     flex-direction: column;
     margin-bottom: 20px;
 
 }
+
 .form-group label {
-    font-size: 18px; /* Adjust font size as needed */
-    font-weight: bold; /* Make the label bold */
-    color: #1b3a4b; /* Adjust color as needed */
-    display: block; /* Ensure the label is a block element */
-    margin-bottom: 10px; /* Add some space below the label */
+    font-size: 18px;
+    /* Adjust font size as needed */
+    font-weight: bold;
+    /* Make the label bold */
+    color: #1b3a4b;
+    /* Adjust color as needed */
+    display: block;
+    /* Ensure the label is a block element */
+    margin-bottom: 10px;
+    /* Add some space below the label */
     margin-top: 20px;
     text-align: center;
 }
 
-.form-group input{
-    width: 100%; /* Ensure the input takes up the full width */
-    padding: 10px; /* Add padding for better readability */
-    font-size: 16px; /* Adjust font size as needed */
-    border-radius: 5px; /* Add rounded corners */
-    border: 1px solid #1b3a4b; /* Add a border */
-    
-}
-.form-group textarea{
-    width: 100%; /* Ensure the input takes up the full width */
-    padding: 10px; /* Add padding for better readability */
-    font-size: 16px; /* Adjust font size as needed */
-    border-radius: 5px; /* Add rounded corners */
-    border: 1px solid #1b3a4b; /* Add a border */
+.form-group input {
+    width: 100%;
+    /* Ensure the input takes up the full width */
+    padding: 10px;
+    /* Add padding for better readability */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    border-radius: 5px;
+    /* Add rounded corners */
+    border: 1px solid #1b3a4b;
+    /* Add a border */
+
 }
 
-.form-group button{
-    width: 105%; /* Ensure the input takes up the full width */
-    padding: 10px; /* Add padding for better readability */
-    font-size: 16px; /* Adjust font size as needed */
-    border-radius: 5px; /* Add rounded corners */
-    border: 2px solid #1b3a4b; /* Add a border */
-    background-color: #98c1d9; /* Add a background color */
-    color: #1b3a4b; /* Adjust text color */
-    cursor: pointer; /* Add a pointer cursor on hover */
+.form-group textarea {
+    width: 100%;
+    /* Ensure the input takes up the full width */
+    padding: 10px;
+    /* Add padding for better readability */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    border-radius: 5px;
+    /* Add rounded corners */
+    border: 1px solid #1b3a4b;
+    /* Add a border */
+}
+
+.form-group button {
+    width: 105%;
+    /* Ensure the input takes up the full width */
+    padding: 10px;
+    /* Add padding for better readability */
+    font-size: 16px;
+    /* Adjust font size as needed */
+    border-radius: 5px;
+    /* Add rounded corners */
+    border: 2px solid #1b3a4b;
+    /* Add a border */
+    background-color: #98c1d9;
+    /* Add a background color */
+    color: #1b3a4b;
+    /* Adjust text color */
+    cursor: pointer;
+    /* Add a pointer cursor on hover */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     margin-top: 20px;
 }
 
-.intro-talk{
-    display:flex;
+.intro-talk {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin:100px auto;
-    width:70%;
-}
-.intro-talk h1{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    
-}
-.intro-talk p{
-    font-weight:300;
-    color:#1b3a4b;
-    text-align:center;
-    margin-top:20px;
+    margin: 100px auto;
+    width: 70%;
 }
 
-#ext h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    margin-top:120px;
+.intro-talk h1 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+
+}
+
+.intro-talk p {
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: center;
+    margin-top: 20px;
+}
+
+#ext h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+    margin-top: 120px;
     margin-bottom: 70px;
 }
+
 .extra-cul {
-    display: flex; /* Use flexbox for the container */
-    justify-content: space-around; /* Distribute items evenly */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
-    align-items: center; /* Center items vertically */
-    margin: 20px auto; /* Center the container horizontally */
-    width: 100%; /* Full width of the container */
+    display: flex;
+    /* Use flexbox for the container */
+    justify-content: space-around;
+    /* Distribute items evenly */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if necessary */
+    align-items: center;
+    /* Center items vertically */
+    margin: 20px auto;
+    /* Center the container horizontally */
+    width: 100%;
+    /* Full width of the container */
 }
 
 .extra-cul div {
     background-color: #e4e3e3;
     padding: 10px;
     margin: 20px;
-    width: 25%; /* Adjust width as needed */
+    width: 25%;
+    /* Adjust width as needed */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     display: flex;
     align-items: center;
-    justify-content: center; /* Center content horizontally */
+    justify-content: center;
+    /* Center content horizontally */
     border-radius: 20px;
     flex-direction: column;
-}
-.cl{
-    background-color: #98c1d9;
-    padding:10px;
-    margin:20px auto;
-    width: 25%; /* Adjust width as needed */
-    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    display: flex;
-    align-items: center;
-    justify-content: center; /* Center content horizontally */
-    border-radius: 20px;
-    flex-direction: column;
-}
-.ccc{
-    display:flex;
-    flex-direction: row;
-    align-items: center;
-    margin:20px auto;
-}
-.cl h4,p{
-    text-align: center;
-}
-#des{
-    text-align: left;
-    font-weight:300
 }
 
-.inn{
-    display:flex;
+.cl {
+    background-color: #98c1d9;
+    padding: 10px;
+    margin: 20px auto;
+    width: 25%;
+    /* Adjust width as needed */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    /* Center content horizontally */
+    border-radius: 20px;
+    flex-direction: column;
+}
+
+.ccc {
+    display: flex;
     flex-direction: row;
-    align-items: flex-start; /* Align items at the start of the container */
-    margin:20px auto;
-    width:100%;
-    justify-content: space-around;
+    align-items: center;
+    margin: 20px auto;
 }
-#lala img {
-    max-width: 20px; /* Ensure the image scales within its container */
-    height: auto; /* Maintain aspect ratio */
-    margin:20px auto;
+
+.cl h4,
+p {
+    text-align: center;
 }
-#bdd img{
-    max-width: 60px; /* Ensure the image scales within its container */
-    height: auto; /* Maintain aspect ratio */
-    margin:5px auto;
+
+#des {
+    text-align: left;
+    font-weight: 300
 }
-#frfr{
+
+@media (max-width: 667px) {
+    .extra-cul {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center items horizontally */
+    }
+
+    .extra-cul div {
+        width: 80%;
+        /* Adjust width to take full width */
+    }
+
+    .cl {
+        width: 80%;
+        /* Adjust width to take full width */
+    }
+
+    .ccc {
+        flex-direction: column;
+    }
     
-        width: 60px; /* Adjust width as needed */
-        height: 60px; /* Adjust height as needed */
-        margin: 5px; /* Add some space around the images */
-        flex-shrink: 0; /* Prevent the images from shrinking */
+
+
+
+
+
 }
+
+.inn {
+    display: flex;
+    flex-direction: column; /* Flex column for inner layout */
+    align-items: center;
+    margin: 20px auto;
+    width: 100%;
+}
+
+@media (min-width: 668px) {
+    .inn {
+        display: flex;
+        flex-direction: row; /* Flex column for inner layout */
+        align-items: center;
+        margin: 20px auto;
+        width: 100%;
+    }
+}
+
+#lala img {
+    max-width: 20px;
+    /* Ensure the image scales within its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 20px auto;
+}
+
+#bdd img {
+    max-width: 60px;
+    /* Ensure the image scales within its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 5px auto;
+}
+
+#frfr {
+
+    width: 60px;
+    /* Adjust width as needed */
+    height: 60px;
+    /* Adjust height as needed */
+    margin: 5px;
+    /* Add some space around the images */
+    flex-shrink: 0;
+    /* Prevent the images from shrinking */
+}
+
 #fav-food img {
-    width: 60px; /* Ensure the image scales within its container */
-    height: auto; /* Maintain aspect ratio */
-    margin:10px auto;
-    flex-shrink: 0; /* Prevent the image from shrinking */
+    width: 60px;
+    /* Ensure the image scales within its container */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 10px auto;
+    flex-shrink: 0;
+    /* Prevent the image from shrinking */
 }
-.inn > div {
-    flex: 1; /* Allow each child div to grow equally */
-    margin: 0 10px; /* Add some horizontal spacing between the divs */
+
+.inn>div {
+    flex: 1;
+    /* Allow each child div to grow equally */
+    margin: 0 10px;
+    /* Add some horizontal spacing between the divs */
 }
 
 .inn h2 {
-    text-align: center; /* Center align all h2 elements within .inn */
-    margin: 10px 0; /* Add some margin for spacing */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #1b3a4b; /* Adjust color as needed */
+    text-align: center;
+    /* Center align all h2 elements within .inn */
+    margin: 10px 0;
+    /* Add some margin for spacing */
+    font-size: 24px;
+    /* Adjust font size as needed */
+    color: #1b3a4b;
+    /* Adjust color as needed */
 }
 
 
@@ -791,285 +1163,457 @@ h2{
     flex-direction: row;
 }
 
-.img-aln{
-    display:flex;
+.img-aln {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin:20px auto;
-    width:100%;
+    margin: 20px auto;
+    width: 100%;
     justify-content: space-around;
 }
 
-.french img{
-    width:30px;
-    height:30px;
-    margin:10px;
+.french img {
+    width: 30px;
+    height: 30px;
+    margin: 10px;
 }
 
-#biri img{
-    width: 60px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px auto; /* Add some space between the icon and the text */
-    flex-shrink: 0; /* Prevent the icon from shrinking */
+#biri img {
+    width: 60px;
+    /* Adjust width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 10px auto;
+    /* Add some space between the icon and the text */
+    flex-shrink: 0;
+    /* Prevent the icon from shrinking */
 }
 
-#i-live h2{
-    text-align: center; /* Center align all h2 elements within .inn */
-    margin: 10px auto; /* Add some margin for spacing */
-    font-size: 24px; /* Adjust font size as needed */
-    color: #1b3a4b; /* Adjust color as needed */
+#i-live h2 {
+    text-align: center;
+    /* Center align all h2 elements within .inn */
+    margin: 10px auto;
+    /* Add some margin for spacing */
+    font-size: 24px;
+    /* Adjust font size as needed */
+    color: #1b3a4b;
+    /* Adjust color as needed */
 }
 
-#i-live{
-    display:flex;
+#i-live {
+    display: flex;
     flex-direction: column;
     align-items: center;
-    margin:30px auto;
-    width:100%;
+    margin: 30px auto;
+    width: 100%;
     justify-content: space-around;
 }
-#ussa img{
-    margin-top:-25px;
+
+#ussa img {
+    margin-top: -25px;
 }
-.intro-talk h1{
+
+.intro-talk h1 {
     background-color: #98c1d9;
-    padding:10px;
-    margin:20px auto;
-    width:40%;
+    padding: 10px;
+    margin: 20px auto;
+    width: 40%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
 
-#hobbies h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    margin-top:120px;
+#hobbies h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+    margin-top: 120px;
     margin-bottom: 70px;
 }
+
 #tvl {
     display: flex;
-    flex-direction: row; /* Align items in a row */
-    align-items: center; /* Center items vertically */
-    justify-content: space-around; /* Center items horizontally */
+    flex-direction: row;
+    /* Align items in a row */
+    align-items: center;
+    /* Center items vertically */
+    justify-content: space-around;
+    /* Center items horizontally */
 
 }
-#hob h3{
+
+#hob h3 {
     background-color: #98c1d9;
-    padding:10px;
-    margin:20px auto;
-    width:30%;
+    padding: 10px;
+    margin: 20px auto;
+    width: 30%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
 #tvl img {
-    width: 300px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
-    margin: 10px; /* Add some space around the image */
+    width: 300px;
+    /* Adjust width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
+    margin: 10px;
+    /* Add some space around the image */
     border-radius: 20px;
 }
-#hob h3{
+
+#hob h3 {
     text-align: center;
-    font-weight:500;
-    color:#1b3a4b;
-    margin-top:10px;
-}
-#hob p{
-    text-align: center;
-    font-weight:300;
-    color:#1b3a4b;
-    margin:10px auto;
-    width:50%
+    font-weight: 500;
+    color: #1b3a4b;
+    margin-top: 10px;
 }
 
-#hoo{
+#hob p {
+    text-align: center;
+    font-weight: 300;
+    color: #1b3a4b;
+    margin: 10px auto;
+    width: 50%
+}
+
+#hoo {
     margin-top: 40px;
+
 }
-.extra-cul li{
-    margin-top:8px;
-    padding:8px;
+@media (max-width: 667px) {
+    #tvl {
+        display: flex;
+        flex-direction: column;
+        /* Align items in a row */
+        align-items: center;
+        /* Center items vertically */
+        justify-content: space-around;
+        /* Center items horizontally */
+        width: 80%;
+        margin:0 auto;
+    }
+
+    #tvl img {
+        width: 80%;
+        /* Adjust width as needed */
+        height: auto;
+        /* Maintain aspect ratio */
+        margin: 10px;
+        /* Add some space around the image */
+        border-radius: 20px;
+        
+    }
+
+    #hob h3 {
+        text-align: center;
+        font-weight: 500;
+        color: #1b3a4b;
+        margin-top: 10px;
+    }
+
+    #hob p {
+        text-align: center;
+        font-weight: 300;
+        color: #1b3a4b;
+        margin: 10px auto;
+        width: 80%
+    }
+
+    #hoo {
+        margin-top: 40px;
+        align-items: center;
+    }
+
+    #hobby{
+        align-items: center;
+    }
 }
 
-#crs{
-    margin:100px auto;
-    font-weight:600;
+.extra-cul li {
+    margin-top: 8px;
+    padding: 8px;
 }
 
-#mypro h1{
+#crs {
+    margin: 100px auto;
+    font-weight: 600;
+}
+
+
+#mypro {
     background-color: #e4e3e3;
-    padding:10px;
-    margin:100px auto;
-    width:40%;
+    padding: 10px;
+    margin: 70px auto;
+    width: 40%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
 
-.project-1{
-    display: flex; /* Use flexbox for the container */
-    flex-direction:row; /* Align items in a row */
-    justify-content: space-around; /* Distribute items evenly */
-    flex-wrap: wrap; /* Allow items to wrap to the next line if necessary */
-    align-items: center; /* Center items vertically */
-    width: 80%; /* Full width of the container */
+.project-1 {
+    display: flex;
+    /* Use flexbox for the container */
+    justify-content: space-around;
+    /* Distribute items evenly */
+    flex-wrap: wrap;
+    /* Allow items to wrap to the next line if necessary */
+    align-items: center;
+    /* Center items vertically */
+    width: 80%;
+    /* Full width of the container */
     margin-top: 150px;
-    
+
 
 }
- 
-#mypros{
+@media (max-width: 667px) {
+    .project-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mypro {
+        margin:100px auto;
+        width: 80%;
+        /* Ensure the divs stack and take full width */
+    }
+
+    #mypro {
+        max-width: none;
+    }
+    #mypross{
+        width: 100%;
+        /* Ensure the divs stack and take full width */
+        margin:0;
+        
+    }
+    #edith{
+        width: 80%;
+        /* Ensure the divs stack and take full width */
+        margin:10px auto 5px 38px;
+    }
+}
+
+
+
+#mypross {
     background-color: #98c1d9;
-    padding:5px;
-    margin:10px auto;
+    padding: 5px;
+    margin: 10px auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    display:flex;
-    flex-direction: column;
-    width:50%;
-    
-    
+    width: 50%;
+    flex-wrap: wrap;
+    word-wrap: break-word;
+    overflow-wrap: break-word;
+    font-weight: 300;
+    color: #1b3a4b;
+    text-align: center;
+
+
 }
 
-.project-1 img{
-    width: 300px; /* Adjust width as needed */
-    height: auto; /* Maintain aspect ratio */
+.project-1 img {
+    max-width: 300px;
+    /* Adjust width as needed */
+    height: auto;
+    /* Maintain aspect ratio */
     border-radius: 20px;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    
-    
+
+
+}
+
+#halarvai {
+    flex-wrap: wrap;
 }
 
 
-#gg{
+#gg {
     background-color: #1b3a4b;
-    padding:10px;
-    color:#e4e3e3;
+    padding: 10px;
+    color: #e4e3e3;
     border-radius: 20px;
-    margin:10px auto;
+    margin: 10px auto;
     box-shadow: #e4e3e3;
 
 }
-#mypros a{
+
+#mypross a {
     text-decoration: none;
-    justify-content: space-around;
     align-items: center;
 }
-#dv{
-    background-color: #1b3a4b;
-    padding:10px;
-    color:#e4e3e3;
-    border-radius: 20px;
-    margin:10px auto;
-    box-shadow: #e4e3e3;
 
+#mypross h2 {
+    font-weight: 600;
+    color: #1b3a4b;
+    text-align: center;
+    margin-top: 5px;
 }
-#mypros h2{
-    font-weight:600;
-    color:#1b3a4b;
-    text-align:center;
-    margin-top:5px;
+
+#tech {
+    color: grey;
 }
-#mypros p{
-    font-weight:300;
-    color:#1b3a4b;
-    text-align:center;
-    
+
+#btt {
+    align-items: center;
 }
-#tech{
-    text-align: left;
-    font-weight:800;
-    color:grey;
-    font-size:16px;
+
+@media (max-width: 768px) {
+    .project-1 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #mypros,
+    #edith {
+        width: 50%;
+        /* Ensure the divs stack and take full width */
+    }
+
+    #mypros {
+        max-width: none;
+    }
 }
-#btt{
-    text-align: left;
-}
-#intro-achiv h1{
-    background-color:  #98c1d9;
-    padding:10px;
-    margin:100px auto;
-    width:60%;
+
+
+
+
+
+#intro-achiv h1 {
+    background-color: #98c1d9;
+    padding: 10px;
+    margin: 100px auto;
+    width: 60%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
-    
+
 
 }
 
-#achievement-year{
-    background-color: #e4e3e3; 
-    padding:10px;
-    margin:50px auto;
-    width:30%;
+#achievement-year {
+    background-color: #e4e3e3;
+    padding: 10px;
+    margin: 50px auto;
+    width: 30%;
+    height: auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    flex-wrap: wrap;
 }
 
 #hackathons {
-    display: flex; /* Use flexbox for the container */
+    display: flex;
+    /* Use flexbox for the container */
     flex-direction: column;
-    justify-content: space-between; /* Distribute space between items */
-    align-items: center; /* Center items vertically */
-    margin: 20px auto; /* Center the container horizontally */
-    width: 100%; /* Full width of the container */
+    justify-content: space-between;
+    /* Distribute space between items */
+    align-items: center;
+    /* Center items vertically */
+    margin: 20px auto;
+    /* Center the container horizontally */
+    width: 100%;
+    /* Full width of the container */
 }
 
 #hackathon {
     background-color: #98c1d9;
     padding: 10px;
-    margin: 20px; /* Add some space around each hackathon item */
-    width: 45%; /* Adjust width to ensure they fit side by side */
+    margin: 20px;
+    /* Add some space around each hackathon item */
+    width: 45%;
+    /* Adjust width to ensure they fit side by side */
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    flex-wrap: wrap;
 }
 
-#hackathon h3,h4{
+#hackathon h3,h4 {
     text-align: center;
-    font-weight:600;
-    color:#1b3a4b;
-    margin-top:10px;
+    font-weight: 600;
+    color: #1b3a4b;
+    margin-top: 10px;
 }
-#place{
-    color:grey;
-    font-weight:500;
+
+#place {
+    color: grey;
+    font-weight: 500;
 }
 #techie{
-    color:grey;
-    font-weight:500;
+    color: grey;
 }
 
-#exx{
+@media (max-width: 667px) {
+    #hackathons {
+        flex-direction: column;
+        /* Stack items vertically */
+        align-items: center;
+        /* Center items horizontally */
+    }
+
+    #hackathon {
+        width: 80%;
+        /* Adjust width to take full width */
+    }
+}
+
+#exx {
     background-color: #98c1d9;
-    padding:10px;
-    margin:50px auto;
-    width:30%;
+    padding: 10px;
+    margin: 50px auto;
+    width: 30%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
 
-#myres{
+#myres {
     background-color: #e4e3e3;
-    padding:5px;
-    color:#1b3a4b;
+    padding: 5px;
+    color: #1b3a4b;
     border-radius: 20px;
-    margin:182px auto;
+    margin: 152px auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
-    width:40%;
+    width: 40%;
     border-width: 5px;
     border-color: #1b3a4b;
     border-radius: 40px;
-    
+
 }
-#myres a{
+
+#myres a {
     text-decoration: none;
     font-weight: 700;
-    color:#1b3a4b;
+    color: #1b3a4b;
 
 }
 
-#permission-resume-use{
-    margin:150px auto;
-    text-align:display;
+#permission-resume-use {
+    margin: 150px auto;
+    text-align: display;
 }
-#nimbus-1011 img{
-    width:100%;
-    height:300px;
+
+#nimbus-1011 img {
+    width: 100%;
+    height: 300px;
+}
+
+#resmeme {
+    display: flex;
+    justify-content: center; /* Center items horizontally */
+    align-items: center; /* Center items vertically */
+    flex-direction: column; /* Stack items vertically */
+}
+
+
+#resmeme img {
+    width: 70%;
+    height: 300px;
+    margin: 80px auto;
+    align-items: center;
+
+}
+
+@media (max-width: 667px) {
+    #resmeme img {
+        width: 100%;
+        height: 300px;
+        margin: 150px auto;
+        align-items: center;
+    }
 }
