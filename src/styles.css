@@ -1,6 +1,6 @@
 body {
     background-color: #e4e3e3;
-    font-family: Josefin Sans, sans-serif;
+    font-family: 'Josefin Sans', sans-serif !important;
     margin: 0;
     background-image: url('https://images.unsplash.com/photo-1546525012-4f79313b6de6?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     width: 100%;
@@ -21,6 +21,79 @@ body {
     /* Set position to relative for absolute positioning of icons */
 }
 
+.navbar-nav .nav-item {
+    margin-bottom: 8px; /* Adds vertical space between nav items */
+}
+
+.navbar-nav .nav-item:last-child {
+    margin-bottom: 0; /* Remove extra space after the last item */
+}
+
+
+
+.navbar-brand-custom {
+    color: white !important; /* Ensure brand text is white */
+    text-decoration: none;
+    padding: 10px 15px; /* Consistent padding */
+    background-color: #284b63;
+    border-radius: 5px;
+    display: inline-block;
+    font-family: 'Josefin Sans', sans-serif;
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
+    width: auto; /* Ensure auto width based on content */
+    max-width: 100px; /* Limit the width so it doesn't grow too large */
+    white-space: nowrap; /* Prevent the text from wrapping */
+    height: 40px; /* Fix height to prevent resizing */
+    line-height: 40px; /* Vertically center text inside the fixed height */
+    text-align: center !important; /* Center text horizontally */
+    flex-wrap:wrap;
+
+    
+  }
+.navbar-nav .nav-link {
+    color: white !important; /* Ensure links are white */
+    text-decoration: none !important; /* Remove underline from links */
+    padding: 10px 15px; /* Add padding for the colored box effect */
+    background-color: #284b63; /* Background color for the box */
+    border-radius: 5px; /* Rounded corners for the box */
+    display: inline-block; /* Ensure the padding and background apply correctly */
+    font-family: 'Josefin Sans', sans-serif; /* Custom font */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5); /* Add box shadow */
+}
+
+.navbar-nav .nav-link:hover {
+    background-color: #35697b; /* Change background color on hover */
+
+}
+
+.navbar-toggler {
+    
+        height: 40px; /* Set the height for the button */
+        width: 40px;  /* Set the width for the button */
+        padding: 0;   /* Remove extra padding */
+        display: flex; /* Use flexbox for centering the icon */
+        justify-content: center; /* Horizontally center the icon */
+        align-items: center; /* Vertically center the icon */
+    
+}
+
+.navbar-toggler-icon {
+    width: 20px; /* Control the size of the icon inside */
+    height: 20px;
+}
+
+/* Add transition for smooth animation */
+.nav-link {
+    transition: transform 0.3s ease, opacity 0.3s ease;
+  }
+  
+  /* Zoom-out effect on click */
+  .nav-link:active {
+    transform: scale(0.8); /* Zoom out effect (reduce size) */
+    opacity: 0.5; /* Make it slightly transparent */
+  }
+  
+
 #navbar ul {
     list-style-type: none;
     padding: 0;
@@ -39,7 +112,7 @@ body {
     /* Remove margin from the last item */
 }
 
-#nav-elements ul li a {
+#nav-elements li a {
     color: white;
     /* Ensure links are white */
     text-decoration: none;
@@ -56,7 +129,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
 }
 
-#nav-elements ul li a:hover {
+#nav-elements li a:hover {
     background-color: #1b3a4b;
     /* Change background color on hover */
     text-decoration: none;
@@ -66,52 +139,28 @@ body {
 
 #right-icons {
     position: absolute;
-    /* Position the icons absolutely */
-    top: 50%;
-    /* Adjust the top position as needed */
-    right: 25px;
-    /* Adjust the right position as needed */
-    transform: translateY(-50%);
-    /* Adjust for vertical centering */
-    display: flex;
-    /* Ensure icons are in a row */
-    align-items: center;
-    /* Center icons vertically */
+    right: 20px; /* Adjust as needed for spacing */
+    top: 15px;   /* Fix the vertical position */
+    z-index: 1030; /* Make sure it stays on top of other content */
 }
-
 
 #right-icons ul {
-    display: flex;
-    /* Ensure icons are in a row */
-    align-items: center;
-    /* Center icons vertically */
-    padding: 0;
-    margin: 0;
+  display: flex; /* Ensure the icons are aligned horizontally */
+  list-style-type: none; /* Remove default bullet points */
+  padding-left: 0; /* Remove default padding from ul */
 }
 
-#right-icons li {
-    margin-left: 10px;
-    /* Adjust spacing as needed */
+#right-icons ul li {
+  margin-right: 15px; /* Space between icons */
 }
 
-#linkedin a img {
-    width: 40px;
-    /* Adjust LinkedIn icon size */
-    height: 40px;
-    /* Adjust LinkedIn icon size */
+#right-icons ul li:last-child {
+  margin-right: 0; /* Remove margin from the last icon */
 }
 
-#right-icons li a {
-    padding: 0;
-    /* Remove padding for icons */
-
-}
-
-#right-icons li a img {
-    width: 24px;
-    /* Adjust icon size */
-    height: 24px;
-    /* Adjust icon size */
+#right-icons img {
+  width: 30px; /* Set the width of icons */
+  height: 30px; /* Set the height of icons */
 }
 
 
@@ -123,43 +172,33 @@ body {
         /* Center items */
         width: 100%;
         height: auto;
-        position:absolute;
+        position: fixed;
         top: 0;
         left: 0;
 
 
     }
+    .navbar-nav {
+        flex-direction: column; /* Stack nav items vertically on small screens */
+        width: 100%;
+      }
+    
+      .navbar-nav .nav-item {
+        margin-bottom: 8px; /* Add space between items */
+        text-align: left;
+      }
+    
+      .navbar-nav .nav-item:last-child {
+        margin-bottom: 0;
+      }
+    
+      /* Ensure that the items come below the menu button */
+      .collapse.navbar-collapse {
+        display: block; /* Make sure items stack below the button */
+        margin-left: 10px;
+      }
 
-    #navbar ul {
-        flex-direction: column;
-        /* Stack list items vertically */
-        align-items: flex-start;
-        /* Center items */
-        display: grid;
-        grid-template-columns: repeat(3, 1fr);
-        /* 3 items per row */
-        gap: 2px;
-        /* Space between items */
-    }
 
-    #navbar ul li {
-        margin: 3px 0;
-        /* Adjust spacing for vertical layout */
-    }
-
-    #right-icons ul {
-        display: flex;
-        flex-direction: column;
-        /* Keep icons in a row */
-        align-items: flex-end;
-        /* Align icons at the bottom */
-        position: static;
-        grid-template-columns: repeat(1, 1fr);
-        /* 1 items per row */
-        gap: 5px;
-        /* Space between items */
-
-    }
 
     #intro-img {
         margin:300px auto;
@@ -1473,7 +1512,9 @@ p {
 }
 
 
-
+.extra-cul{
+    text-align: center;
+}
 
 
 #intro-achiv h1 {
@@ -1551,13 +1592,23 @@ p {
         width: 80%;
         /* Adjust width to take full width */
     }
+    #achievement-year {
+        width: 80%;
+        /* Adjust width to take full width */
+        height:auto;
+    }
+    #exx {
+        width: 80%;
+        /* Adjust width to take full width */
+    }
 }
 
 #exx {
     background-color: #98c1d9;
     padding: 10px;
     margin: 50px auto;
-    width: 30%;
+    width: 70%;
+    height: auto;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
 }
