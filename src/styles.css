@@ -907,6 +907,14 @@ h2 {
     font-size: 15px;
 }
 
+#x p{
+    font-weight: 800;
+    color: #1b3a4b;
+    text-align: center;
+    margin: 0 auto;
+    font-size: 15px;
+}
+
 .form-box {
     background-color: #e4e3e3;
     padding: 10px;
