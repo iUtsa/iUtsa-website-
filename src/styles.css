@@ -4,6 +4,7 @@ body {
     margin: 0;
     background-image: url('https://images.unsplash.com/photo-1546525012-4f79313b6de6?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     width: 100%;
+    z-index: -99999;
 
 
 }
@@ -18,6 +19,7 @@ body {
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     position: fixed;
     top: 0;
+    z-index: 1030;
     /* Set position to relative for absolute positioning of icons */
 }
 
@@ -276,6 +278,8 @@ body {
         color: #1b3a4b;
     }
 
+    
+
     #bottom-bar {
         background-color: #98c1d9;
         width: 100%;
@@ -296,6 +300,89 @@ body {
     
     }
 
+    /* Initial styles for each box */
+#first-box, #overview, #edu-box, .experience-box1, .experience-box2, .experience-box3 {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 1; /* Set to visible by default */
+    transform: translateY(0); /* No initial offset */
+}
+
+/* Different effects on hover for each box */
+#first-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#overview:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+#edu-box:hover {
+    transform: translateY(-8px) scale(1.05) rotate(-1deg);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-box1:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.experience-box2:hover {
+    transform: translateY(-8px) rotate(2deg);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.experience-box3:hover {
+    transform: translateY(-8px) scale(1.07) rotate(-2deg);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.4);
+}
+
+}
+ul#icon-container {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    list-style-type: none;
+    padding: 0;
+    margin: 0;
+}
+
+/* Remove background and border, and add hover effects */
+ul#icon-container li {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    margin: 20px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    cursor: pointer;
+}
+
+/* Hover effect for immediate elevation */
+ul#icon-container li:hover {
+    transform: translateY(-10px) scale(1.05);
+    box-shadow: 0 10px 20px rgba(0, 0, 0, 0.2);
+}
+
+/* Styling for the images */
+ul#icon-container img {
+    width: 80px;
+    height: 80px;
+    margin-bottom: 10px;
+    transition: transform 0.3s ease;
+}
+
+/* Optional subtle rotate effect on image hover */
+ul#icon-container img:hover {
+    transform: rotate(5deg);
+}
+
+/* Styling for text below icons */
+ul#icon-container p {
+    font-size: 16px;
+    font-weight: bold;
+    color: #333;
+    margin: 0;
 }
 
 #first-box {
@@ -626,6 +713,44 @@ h2 {
 
 
 }
+/* Initial styles for each box */
+#first-box, #overview, #edu-box, .experience-box1, .experience-box2, .experience-box3 {
+    transition: transform 0.4s ease-in-out, box-shadow 0.4s ease-in-out, opacity 0.4s ease-in-out;
+    opacity: 1; /* Set to visible by default */
+    transform: translateY(0); /* No initial offset */
+}
+
+/* Different effects on hover for each box */
+#first-box:hover {
+    transform: translateY(-8px) scale(1.02);
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.3);
+}
+
+#overview:hover {
+    transform: translateY(-10px) rotate(1deg);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.4);
+}
+
+#edu-box:hover {
+    transform: translateY(-8px) scale(1.05) rotate(-1deg);
+    box-shadow: 0px 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.experience-box1:hover {
+    transform: translateY(-12px) scale(1.03);
+    box-shadow: 0px 12px 25px rgba(0, 0, 0, 0.5);
+}
+
+.experience-box2:hover {
+    transform: translateY(-8px) rotate(2deg);
+    box-shadow: 0px 10px 20px rgba(0, 0, 0, 0.6);
+}
+
+.experience-box3:hover {
+    transform: translateY(-8px) scale(1.07) rotate(-2deg);
+    box-shadow: 0px 15px 35px rgba(0, 0, 0, 0.4);
+}
+
 
 #skills-box h2 {
     font-weight: 600;
@@ -1389,10 +1514,12 @@ p {
 #mypro {
     background-color: #e4e3e3;
     padding: 10px;
-    margin: 70px auto;
+    margin: 130px auto;
     width: 40%;
     box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.5);
     border-radius: 20px;
+    margin-top:120px !important;
+    margin-bottom: 60px !important;
 }
 
 .project-1 {
@@ -1677,3 +1804,46 @@ p {
         align-items: center;
     }
 }
+
+.card {
+    max-width: 90%;
+    margin: auto;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    margin-bottom:30px;
+    border-radius: 30px;
+    
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+}
+
+.card img {
+    height: 200px;
+    object-fit: cover;
+}
+
+.card-body {
+    min-height: 200px;
+}
+
+/* Center align GitHub link button and apply color change on hover */
+.card .btn {
+    display: block;
+    margin: 10px auto;
+    transition: background-color 0.3s ease, color 0.3s ease;
+    background-color: #1b3a4b;
+}
+
+.card .btn:hover {
+    background-color: #98c1d9;
+    color: #ffffff;
+}
+.card-body h5{
+    color: #1b3a4b;
+    font-weight: 600;
+    text-align: center;
+    font-family:'Josefin Sans', sans-serif !important;
+}
+
