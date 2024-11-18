@@ -1961,6 +1961,10 @@ p {
     border-radius: 40px;
 
 }
+#myres:hover {
+    transform: scale(1.02); /* Slight zoom effect */
+    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.5); /* Elevated shadow */
+}
 
 #myres a {
     text-decoration: none;
@@ -2103,3 +2107,4 @@ p {
         transform: rotateY(360deg);
     }
 }
+
