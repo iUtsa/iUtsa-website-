@@ -2108,3 +2108,87 @@ p {
     }
 }
 
+
+
+#rrrrr{
+    margin:150px auto;
+}
+#rrrrr h1{
+    font-size: 3rem;
+  font-weight: bold;
+  color: black; /* White text for contrast */
+  text-align: center;
+  text-shadow: 
+    0 0 5px #ffff00,      /* Small yellow glow */
+    0 0 10px #ffd700,     /* Medium golden glow */
+    0 0 20px #ffae00,     /* Larger orange-yellow glow */
+    0 0 40px #ff8c00,     /* Intense orange outer glow */
+    0 0 80px #ff4500;     /* Soft red-orange outermost glow */
+}
+
+
+#rrrrr {
+    position: relative;
+    width: 200px;
+    height: 200px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  
+  #rezzz {
+    color: #ffffff;
+    font-size: 2rem;
+    z-index: 10;
+  }
+  
+  .planet {
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    border-radius: 50%;
+    background-color: #ff6347; /* Default color for planets */
+    animation: orbit 6s linear infinite;
+  }
+  
+  .planet1 {
+    background-color: #ff6347; /* Planet 1 color */
+    animation: orbit1 6s linear infinite;
+  }
+  
+  .planet2 {
+    background-color: #1e90ff; /* Planet 2 color */
+    animation: orbit2 8s linear infinite;
+  }
+  
+  .planet3 {
+    background-color: #32cd32; /* Planet 3 color */
+    animation: orbit3 10s linear infinite;
+  }
+  
+  @keyframes orbit1 {
+    0% {
+      transform: rotate(0deg) translateX(100px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(100px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit2 {
+    0% {
+      transform: rotate(0deg) translateX(120px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(120px) rotate(-360deg);
+    }
+  }
+  
+  @keyframes orbit3 {
+    0% {
+      transform: rotate(0deg) translateX(140px) rotate(0deg);
+    }
+    100% {
+      transform: rotate(360deg) translateX(140px) rotate(-360deg);
+    }
+  }
