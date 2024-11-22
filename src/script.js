@@ -83,3 +83,26 @@ addCardsWithDelay('socialMediaContainer', socialMediaData);
 
 
 
+//rocket
+
+
+document.addEventListener("DOMContentLoaded", () => {
+    const rocket = document.querySelector('.rocket');
+    const marsPlanet = document.querySelector('.mars-planet');
+    const astronaut = document.querySelector('.astronaut');
+
+    rocket.addEventListener('animationend', () => {
+        // After the rocket stops near the mars-planet, show the astronaut
+        const rocketRect = rocket.getBoundingClientRect();
+        const marsPlanetRect = marsPlanet.getBoundingClientRect();
+
+        if (
+            rocketRect.right >= marsPlanetRect.left &&
+            rocketRect.bottom <= marsPlanetRect.bottom
+        ) {
+            astronaut.style.opacity = 1; // Show the astronaut waving "Hi!"
+        }
+    });
+});
+
+

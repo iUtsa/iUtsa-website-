@@ -2192,3 +2192,195 @@ p {
       transform: rotate(360deg) translateX(140px) rotate(-360deg);
     }
   }
+
+
+
+/* Scene wrapper */
+/* Scene wrapper */
+/* Scene wrapper */
+.scene {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    pointer-events: none; /* Allows main content interactivity */
+    z-index: 0; /* Above the body background but below content */
+}
+
+/* Mars Planet */
+.mars-planet {
+    position: absolute;
+    bottom: 5%; /* Adjust for responsiveness */
+    right: 5%; /* Adjust for responsiveness */
+    width: 12vw; /* Scales with screen width */
+    height: 12vw; /* Keeps aspect ratio */
+    background: radial-gradient(circle at 30% 30%, #d9d9d9, #a9a9a9, #707070);
+    border-radius: 50%;
+    box-shadow: 0 0 40px rgba(0, 0, 0, 0.5);
+    overflow: hidden;
+}
+
+/* Moon craters */
+.mars-planet::before,
+.mars-planet::after {
+    content: '';
+    position: absolute;
+    border-radius: 50%;
+    background: radial-gradient(circle, #b0b0b0, #888);
+    box-shadow: inset 0 0 10px rgba(0, 0, 0, 0.5);
+}
+
+/* Crater 1 */
+.mars-planet::before {
+    width: 3vw;
+    height: 3vw;
+    top: 20%;
+    left: 30%;
+}
+
+/* Crater 2 */
+.mars-planet::after {
+    width: 2vw;
+    height: 2vw;
+    top: 60%;
+    left: 60%;
+}
+
+
+/* Rocket */
+.rocket {
+    position: absolute;
+    bottom: 5%;
+    left: -10%;
+    width: 2.5vw;
+    height: 10vw;
+    animation: moveRocketToPlanet 10s cubic-bezier(0.42, 0, 0.58, 1) infinite; /* Smooth bezier easing */
+    animation-fill-mode: forwards; /* Maintain position during delay */
+}
+/* Rocket Baidi */
+.rocket .baidi {
+    position: relative;
+    width: 100%;
+    height: 100%;
+    background: #f44336;
+    border-radius: 20px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+/* Rocket Window */
+.rocket .window {
+    position: absolute;
+    top: 10%; /* Adjusted to keep proportions */
+    left: 50%;
+    width: 1.5vw; /* Scales with screen */
+    height: 1.5vw; /* Keeps aspect ratio */
+    background: #ffffff;
+    border-radius: 50%;
+    transform: translateX(-50%);
+    border: 2px solid #ddd;
+}
+
+/* Rocket Fins */
+.rocket .fins {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 15%; /* Proportional height for fins */
+    background: #ff5722;
+    clip-path: polygon(0% 0%, 50% 50%, 100% 0%, 50% 100%);
+}
+
+/* Rocket Exhaust */
+.rocket .exhaust {
+    position: absolute;
+    bottom: -10%;
+    left: 50%;
+    width: 1vw;
+    height: 8vw;
+    background: linear-gradient(to bottom, #ffa500, #ff4500, rgba(255, 69, 0, 0));
+    border-radius: 50%;
+    transform: translateX(-50%) rotate(180deg);
+    animation: exhaustFlicker 0.2s infinite;
+}
+
+/* Astronaut */
+.astronaut {
+    position: absolute;
+    bottom: 18%; /* Appears just above the mars-planet */
+    right: 6%; /* Aligns with the mars-planet */
+    opacity: 0; /* Hidden until landing */
+    z-index: 2;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.astronaut-body {
+    width: 3vw;
+    height: 3vw;
+    background: #ffffff;
+    border-radius: 50%;
+    border: 2px solid #ddd;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+}
+
+.astronaut .message {
+    margin-top: 10px;
+    font-size: 1vw; /* Scales with screen */
+    color: white;
+    background: rgba(0, 0, 0, 0.7);
+    padding: 0.5vw 1vw;
+    border-radius: 10px;
+    animation: wave 1.5s infinite;
+}
+
+/* Animations */
+@keyframes moveRocketToPlanet {
+    0% {
+        transform: translate(0, 0); /* Start at the bottom-left off-screen */
+    }
+    20% {
+        transform: translate(20vw, -10vh); /* Start ascending */
+    }
+    40% {
+        transform: translate(40vw, -20vh); /* Peak ascent */
+    }
+    60% {
+        transform: translate(60vw, -15vh); /* Begin descending */
+    }
+    80% {
+        transform: translate(calc(100vw - 18vw), -5vh); /* Close to Mars */
+    }
+    100% {
+        transform: translate(calc(100vw - 13vw), 0) rotate(-90deg); /* Land smoothly */
+    }
+}
+
+
+
+@keyframes exhaustFlicker {
+    0%, 100% {
+        opacity: 0.8;
+        height: 4vw;
+        
+    }
+    50% {
+        opacity: 0.4;
+        height: 1.5vw;
+        
+    }
+}
+
+@keyframes wave {
+    0%, 100% {
+        transform: rotate(0deg);
+    }
+    50% {
+        transform: rotate(15deg);
+    }
+}
+
+
