@@ -85,7 +85,6 @@ addCardsWithDelay('socialMediaContainer', socialMediaData);
 
 //rocket
 
-
 document.addEventListener("DOMContentLoaded", () => {
     const rocket = document.querySelector('.rocket');
     const marsPlanet = document.querySelector('.mars-planet');
@@ -93,10 +92,10 @@ document.addEventListener("DOMContentLoaded", () => {
     // Array of radial gradients for the Mars planet
     const gradients = [
         "radial-gradient(circle at 30% 30%, #d9d9d9, #a9a9a9, #707070)", // Initial gradient
-        "radial-gradient(circle at 30% 30%, #ffa500, #ff4500, #8b0000)", // Gradient 1
-        "radial-gradient(circle at 30% 30%, #00ff7f, #228b22, #006400)", // Gradient 2
-        "radial-gradient(circle at 30% 30%, #87cefa, #4682b4, #1e90ff)", // Gradient 3
-        "radial-gradient(circle at 30% 30%, #fffacd, #ffdead, #daa520)"  // Gradient 4
+        "radial-gradient(circle at 30% 30%, #ffa500, #ff4500, #8b0000)", // Mars-like
+        "radial-gradient(circle at 30% 30%, #00ff7f, #228b22, #006400)", // Jupiter-like
+        "radial-gradient(circle at 30% 30%, #87cefa, #4682b4, #1e90ff)", // Saturn-like
+        "radial-gradient(circle at 30% 30%, #fffacd, #ffdead, #daa520)"  // Neptune-like
     ];
     let gradientIndex = 0; // Current gradient index
 
@@ -109,17 +108,94 @@ document.addEventListener("DOMContentLoaded", () => {
 
     // Function to start the rocket animation
     function startRocketAnimation() {
-        rocket.style.animation = "moveRocketToPlanet 8s ease-in-out forwards";
+        // Reset the animation by removing and re-adding the class
+        rocket.style.animation = "none"; // Stop any existing animation
+        setTimeout(() => {
+            rocket.style.animation = "moveRocketToPlanet 8s ease-in-out forwards"; // Restart animation
+        }, 10); // Small delay to reset animation
     }
 
     // Listen for the animationend event
     rocket.addEventListener("animationend", () => {
         console.log("Rocket landed. Changing Mars gradient..."); // Debugging log
         changeMarsPlanetGradient(); // Change the planet's gradient after landing
+        startRocketAnimation(); // Restart the rocket animation
     });
 
-    // Start the animation
+    // Start the initial animation
     startRocketAnimation();
 });
 
+
+
+
+//change mode
+
+document.addEventListener("DOMContentLoaded", () => {
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
+
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        updateIcon(savedTheme);
+        if (savedTheme === 'dark-mode') {
+            addSpaceElements();
+        }
+    }
+
+    // Toggle dark mode
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+            updateIcon('light-mode');
+            removeSpaceElements();
+        } else {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+            updateIcon('dark-mode');
+            addSpaceElements();
+        }
+    });
+
+    // Add space elements for dark mode
+    function addSpaceElements() {
+        const stars = document.createElement('div');
+        stars.classList.add('stars');
+        body.appendChild(stars);
+
+        const comet = document.createElement('div');
+        comet.classList.add('comet');
+        body.appendChild(comet);
+
+        const galaxy = document.createElement('div');
+        galaxy.classList.add('galaxy');
+        body.appendChild(galaxy);
+    }
+
+    // Remove space elements when exiting dark mode
+    function removeSpaceElements() {
+        const stars = document.querySelector('.stars');
+        const comet = document.querySelector('.comet');
+        const galaxy = document.querySelector('.galaxy');
+
+        if (stars) stars.remove();
+        if (comet) comet.remove();
+        if (galaxy) galaxy.remove();
+    }
+
+    // Update the theme toggle icon
+    function updateIcon(theme) {
+        if (theme === 'dark-mode') {
+            themeIcon.classList.remove('fa-moon');
+            themeIcon.classList.add('fa-sun');
+        } else {
+            themeIcon.classList.remove('fa-sun');
+            themeIcon.classList.add('fa-moon');
+        }
+    }
+});
 

@@ -1,12 +1,151 @@
 body {
-    background-color: #e4e3e3;
-    font-family: 'Josefin Sans', sans-serif !important;
     margin: 0;
+    font-family: 'Josefin Sans', sans-serif !important;
+    transition: background-color 0.5s, background-image 0.5s;
+
+    /* Default (light mode) styles */
+    background-color: #e4e3e3;
     background-image: url('https://images.unsplash.com/photo-1546525012-4f79313b6de6?q=80&w=2938&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D');
     width: 100%;
-    z-index: -99999;
+    background-repeat: repeat; /* Ensure the image repeats */
+    background-size: auto; /* Default sizing */
+}
+
+/* Dark mode base setup */
+/* Allow scrolling and maintain the space theme */
+body.dark-mode {
+    background-color: #000; /* Space background */
+    background-image: 
+        radial-gradient(circle, rgba(255, 255, 255, 0.2) 1px, transparent 1px), /* Small stars */
+        radial-gradient(circle, rgba(255, 255, 255, 0.15) 2px, transparent 2px), /* Medium stars */
+        radial-gradient(circle, rgba(255, 255, 255, 0.1) 0.5px, transparent 0.5px), /* Tiny stars */
+        linear-gradient(120deg, rgba(18, 32, 47, 1) 0%, rgba(10, 25, 41, 1) 50%, rgba(2, 12, 24, 1) 100%); /* Nebula */
+    background-size: 50px 50px, 100px 100px, 2px 2px, auto;
+    background-repeat: repeat, repeat, repeat, no-repeat;
+    position: relative;
+    overflow-y: auto;
+    
+}
+
+body.dark-mode::before, 
+body.dark-mode::after {
+    z-index: -9999; /* Push them far behind the main content */
+}
+body.dark-mode::before, 
+body.dark-mode::after {
+    pointer-events: none; /* Ensure they don't intercept hover events */
+}
 
 
+div {
+    pointer-events: auto;
+}
+
+
+
+
+
+/* Multiple Comets */
+.comet-1,
+.comet-2,
+.comet-3 {
+    content: '';
+    position: fixed;
+    width: 150px;
+    height: 4px;
+    background: linear-gradient(90deg, rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    z-index: -1;
+}
+
+/* Individual Comet Positions and Animations */
+.comet-1 {
+    top: 10%;
+    left: -200px;
+    animation: moveComet1 6s linear infinite;
+}
+
+.comet-2 {
+    top: 50%;
+    left: -200px;
+    animation: moveComet2 8s linear infinite;
+}
+
+.comet-3 {
+    top: 80%;
+    left: -200px;
+    animation: moveComet3 10s linear infinite;
+}
+
+/* Animations for Comets */
+@keyframes moveComet1 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 100vh);
+        opacity: 0;
+    }
+}
+
+@keyframes moveComet2 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, 50vh);
+        opacity: 0;
+    }
+}
+
+@keyframes moveComet3 {
+    0% {
+        transform: translate(0, 0);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(100vw, -50vh);
+        opacity: 0;
+    }
+}
+
+/* Animations for Galaxies */
+@keyframes rotateGalaxy1 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(360deg);
+    }
+}
+
+@keyframes rotateGalaxy2 {
+    0% {
+        transform: translate(-50%, -50%) rotate(0deg);
+    }
+    100% {
+        transform: translate(-50%, -50%) rotate(-360deg);
+    }
+}
+
+
+
+body.dark-mode h1 {
+    color: #ffffff; /* Bright white color */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    transition: color 0.5s, text-shadow 0.5s; /* Smooth transition */
+}
+body.dark-mode h2 {
+    color: #ffffff; /* Bright white color */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    transition: color 0.5s, text-shadow 0.5s; /* Smooth transition */
+}
+body.dark-mode h3 {
+    color: #ffffff; /* Bright white color */
+    text-shadow: 0 0 10px rgba(255, 255, 255, 0.8); /* Glowing effect */
+    transition: color 0.5s, text-shadow 0.5s; /* Smooth transition */
 }
 
 #navbar {
@@ -1585,6 +1724,13 @@ p {
     --animation-duration: 0.5s;
 }
 
+body.dark-mode {
+    --primary-color: #e4e3e3;
+    --secondary-color: #1b3a4b;
+    --accent-color: #98c1d9;
+    --shadow-color: rgba(255, 255, 255, 0.5);
+}
+
 .intro-talk {
     display: flex;
     flex-direction: column;
@@ -1595,8 +1741,8 @@ p {
 }
 
 .intro-talk:hover {
-    transform: scale(1.02); /* Slight zoom effect */
-    box-shadow: 0px 8px 16px var(--shadow-color); /* Elevated shadow */
+    transform: scale(1.02);
+    box-shadow: 0px 8px 16px var(--shadow-color);
 }
 
 .intro-talk h1 {
@@ -1614,8 +1760,8 @@ p {
 
 .intro-talk h1:hover {
     background-color: var(--primary-color);
-    color: var(--secondary-color); /* Text color change */
-    transform: translateY(-5px); /* Slight lift effect */
+    color: var(--secondary-color);
+    transform: translateY(-5px);
 }
 
 .intro-talk p {
@@ -1656,8 +1802,8 @@ p {
 }
 
 .extra-cul div:hover {
-    transform: translateY(-10px); /* Slight upward movement */
-    box-shadow: 0px 8px 16px var(--shadow-color); /* Elevated shadow */
+    transform: translateY(-10px);
+    box-shadow: 0px 8px 16px var(--shadow-color);
 }
 
 .extra-cul h4,
@@ -1685,14 +1831,14 @@ p {
     }
 }
 
-.inn>div {
+.inn > div {
     flex: 1;
     margin: 0 var(--spacing-small);
     transition: transform 0.3s ease, box-shadow 0.3s ease;
 }
 
-.inn>div:hover {
-    transform: scale(1.05); /* Slight zoom */
+.inn > div:hover {
+    transform: scale(1.05);
     box-shadow: 0px 8px 16px var(--shadow-color);
 }
 
@@ -1705,9 +1851,10 @@ p {
 }
 
 #tvl img:hover {
-    transform: scale(1.1); /* Zoom effect */
+    transform: scale(1.1);
     box-shadow: 0px 8px 16px var(--shadow-color);
 }
+
 
 
 #mypro {
@@ -2264,7 +2411,7 @@ p {
     position: relative;
     width: 100%;
     height: 100%;
-    background: #172136;
+    background: #6f6f6f;
     border-radius: 20px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
 }
@@ -2398,3 +2545,121 @@ p {
 }
 
 
+
+#theme-toggle-container{
+    z-index: 1000;
+}
+
+
+/* Dark mode styles */
+body.dark-mode p {
+    color: rgb(149, 145, 145) !important;
+}
+
+/* Dark mode rule for ul inside .extra-cul */
+body.dark-mode .extra-cul ul {
+    color: #FFD700 !important; /* Bright gold color, adjust as needed */
+}
+
+/* Optional: Add styling for the list items if needed */
+body.dark-mode .extra-cul ul li {
+    color: #efefeb !important; /* Matches the bright color of the <ul> */
+}
+
+
+   
+body.dark-mode  h2{
+    color: #000000;
+    text-shadow: 
+        0 0 5px #ffffff, 
+        0 0 10px #8ab8e6, 
+        0 0 20px #4682b4, 
+        0 0 40px #4169e1, 
+        0 0 80px #0000ff; /* Adjust shades for bluish glow */
+}
+
+
+
+
+/* Comet container */
+.comet-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    overflow: hidden;
+    pointer-events: none; /* Prevent interaction with comets */
+    display: none; /* Default: hidden */
+    
+    z-index: -1; /* Push behind all content */
+}
+
+/* Comet style */
+.comet {
+    position: absolute;
+    width: 8px;
+    height: 8px;
+    background: radial-gradient(circle, #ffffff 40%, rgba(255, 255, 255, 0));
+    border-radius: 50%;
+    box-shadow: 0 0 10px #00bfff, 0 0 20px #1e90ff, 0 0 40px #4682b4;
+    animation: comet-move 10s linear infinite;
+    opacity: 0.8;
+}
+
+/* Comet trail */
+.comet:after {
+    content: '';
+    position: absolute;
+    width: 100px;
+    height: 2px;
+    background: linear-gradient(to right, rgba(255, 255, 255, 0), #00bfff);
+    border-radius: 50%;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(45deg);
+    opacity: 0.7;
+    
+}
+
+/* Randomized positions and timings for each comet */
+.comet:nth-child(1) {
+    top: 10%;
+    left: 15%;
+    animation-duration: 7s;
+}
+
+.comet:nth-child(2) {
+    top: 30%;
+    left: 50%;
+    animation-duration: 9s;
+}
+
+.comet:nth-child(3) {
+    top: 50%;
+    left: 80%;
+    animation-duration: 6s;
+}
+
+.comet:nth-child(4) {
+    top: 70%;
+    left: 20%;
+    animation-duration: 8s;
+}
+
+/* Animation for comet movement */
+@keyframes comet-move {
+    0% {
+        transform: translate(0, 0) scale(0.5);
+        opacity: 1;
+    }
+    100% {
+        transform: translate(300px, 300px) scale(0.8);
+        opacity: 0;
+    }
+}
+
+/* Dark mode specific styles */
+body.dark-mode .comet-container {
+    display: block; /* Show comets only in dark mode */
+}

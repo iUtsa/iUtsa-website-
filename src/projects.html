@@ -43,14 +43,22 @@
                 </div>
                 <div id="right-icons" class="d-flex ms-auto align-items-center">
                     <ul class="d-flex align-items-center list-unstyled mb-0">
+                        <!-- Dark mode toggle button -->
+                        <li id="theme-toggle-container">
+                            <button id="theme-toggle" aria-label="Toggle dark mode">
+                                <i id="theme-icon" class="fas "></i>
+                            </button>
+                        </li>
                         <li id="linkedin" class="me-3">
                             <a href="https://www.linkedin.com/in/arnab-das-utsa-0b57a81a4/" target="_blank">
-                                <img src="https://cdn-icons-png.freepik.com/128/3536/3536569.png" alt="LinkedIn" width="30" height="30">
+                                <img src="https://cdn-icons-png.freepik.com/128/3536/3536569.png" alt="LinkedIn"
+                                    width="30" height="30">
                             </a>
                         </li>
                         <li id="github">
                             <a href="https://github.com/iUtsa" target="_blank">
-                                <img src="https://img.icons8.com/?size=100&id=12599&format=png" alt="GitHub" width="30" height="30">
+                                <img src="https://img.icons8.com/?size=100&id=12599&format=png" alt="GitHub" width="30"
+                                    height="30">
                             </a>
                         </li>
                     </ul>
@@ -160,11 +168,111 @@
         </div>
     </div>
 
+    <div class="comet-container">
+        <div class="comet"></div>
+        <div class="comet"></div>
+        <div class="comet"></div>
+        <div class="comet"></div>
+    </div>
+
     <div id="bottom-bar" class="text-center mt-4">
         <p>© All Rights Reserved by Arnab Das Utsa<br>
             Created with HTML5/CSS, JS, and Bootstrap 4 | Hosted on GitHub.com
         </p>
     </div>
+
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggleButton = document.getElementById("theme-toggle");
+            const themeIcon = document.getElementById("theme-icon");
+        
+            // Remove duplicate theme-toggle buttons, if any
+            const duplicateButtons = document.querySelectorAll("#theme-toggle-container");
+            if (duplicateButtons.length > 1) {
+                for (let i = 1; i < duplicateButtons.length; i++) {
+                    duplicateButtons[i].remove();
+                }
+            }
+        
+            // Check if dark mode was enabled previously
+            const darkModeEnabled = localStorage.getItem("dark-mode") === "true";
+        
+            function enableDarkMode() {
+                document.body.classList.add("dark-mode");
+                themeIcon.textContent = "☀️"; // Sun icon
+                localStorage.setItem("dark-mode", "true");
+            }
+        
+            function disableDarkMode() {
+                document.body.classList.remove("dark-mode");
+                themeIcon.textContent = "🌙"; // Moon icon
+                localStorage.setItem("dark-mode", "false");
+            }
+        
+            if (darkModeEnabled) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        
+            themeToggleButton.addEventListener("click", function () {
+                if (document.body.classList.contains("dark-mode")) {
+                    disableDarkMode();
+                } else {
+                    enableDarkMode();
+                }
+            });
+        });
+        
+
+
+
+//rocket
+
+document.addEventListener("DOMContentLoaded", () => {
+    const rocket = document.querySelector('.rocket');
+    const marsPlanet = document.querySelector('.mars-planet');
+
+    // Array of radial gradients for the Mars planet
+    const gradients = [
+        "radial-gradient(circle at 30% 30%, #d9d9d9, #a9a9a9, #707070)", // Initial gradient
+        "radial-gradient(circle at 30% 30%, #ffa500, #ff4500, #8b0000)", // Mars-like
+        "radial-gradient(circle at 30% 30%, #00ff7f, #228b22, #006400)", // Jupiter-like
+        "radial-gradient(circle at 30% 30%, #87cefa, #4682b4, #1e90ff)", // Saturn-like
+        "radial-gradient(circle at 30% 30%, #fffacd, #ffdead, #daa520)"  // Neptune-like
+    ];
+    let gradientIndex = 0; // Current gradient index
+
+    // Function to change the Mars planet's gradient
+    function changeMarsPlanetGradient() {
+        gradientIndex = (gradientIndex + 1) % gradients.length; // Cycle through gradients
+        marsPlanet.style.background = gradients[gradientIndex];
+        console.log(`Gradient changed to: ${gradients[gradientIndex]}`); // Debugging log
+    }
+
+    // Function to start the rocket animation
+    function startRocketAnimation() {
+        // Reset the animation by removing and re-adding the class
+        rocket.style.animation = "none"; // Stop any existing animation
+        setTimeout(() => {
+            rocket.style.animation = "moveRocketToPlanet 8s ease-in-out forwards"; // Restart animation
+        }, 10); // Small delay to reset animation
+    }
+
+    // Listen for the animationend event
+    rocket.addEventListener("animationend", () => {
+        console.log("Rocket landed. Changing Mars gradient..."); // Debugging log
+        changeMarsPlanetGradient(); // Change the planet's gradient after landing
+        startRocketAnimation(); // Restart the rocket animation
+    });
+
+    // Start the initial animation
+    startRocketAnimation();
+});
+
+            </script>
+        
 
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
 </body>

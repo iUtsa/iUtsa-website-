@@ -7,18 +7,20 @@
     <meta name="description" content="iUtsa - Home Page: Portfolio Website">
     <meta name="keywords" content="iUtsa, Contact, HTML, CSS, JavaScript">
     <meta name="author" content="Arnab Das Utsa">
-    <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQHNwcPFWaRY-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715583073177?e=1732147200&v=beta&t=5cxs8FlFy49Dl4cG6dGsaS-HHW4x6vK-1i0d1joWHJA">
+    <meta property="og:image"
+        content="https://media.licdn.com/dms/image/v2/D4E03AQHNwcPFWaRY-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715583073177?e=1732147200&v=beta&t=5cxs8FlFy49Dl4cG6dGsaS-HHW4x6vK-1i0d1joWHJA">
     <title>iUtsa</title>
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    
+
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link
         href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap"
         rel="stylesheet">
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100..700;1,100..700&display=swap"
         rel="stylesheet">
 
@@ -29,259 +31,270 @@
 <body>
     <nav class="navbar navbar-expand-md">
         <div id="navbar">
-        <div class="container-fluid d-flex justify-content-start align-items-flex-start">
-            <a class="navbar-brand navbar-brand-custom d-block d-md-none text-left" href="index.html">
-                Home
-              </a>
-          <button
-            class="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            <span class="navbar-toggler-icon"></span>
-          </button>
-      
-          <div class="collapse navbar-collapse" id="navbarSupportedContent">
-            <ul class="navbar-nav">
-              <li class="nav-item"><a class="nav-link zoomable" href="index.html">Home</a></li>
-              <li class="nav-item"><a class="nav-link zoomable" href="about.html">About</a></li>
-              <li class="nav-item"><a class="nav-link zoomable" href="projects.html">Projects</a></li>
-              <li class="nav-item"><a class="nav-link zoomable" href="achievement.html">Awards</a></li>
-              <li class="nav-item"><a class="nav-link zoomable" href="resume.html">Resume</a></li>
-              <li class="nav-item"><a class="nav-link zoomable" href="contact.html">Contact</a></li>
+            <div class="container-fluid d-flex justify-content-start align-items-flex-start">
+                <a class="navbar-brand navbar-brand-custom d-block d-md-none text-left" href="index.html">
+                    Home
+                </a>
+                <!-- Other navigation items -->
+
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse"
+                    data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent"
+                    aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                    <ul class="navbar-nav">
+                        <li class="nav-item"><a class="nav-link zoomable" href="index.html">Home</a></li>
+                        <li class="nav-item"><a class="nav-link zoomable" href="about.html">About</a></li>
+                        <li class="nav-item"><a class="nav-link zoomable" href="projects.html">Projects</a></li>
+                        <li class="nav-item"><a class="nav-link zoomable" href="achievement.html">Awards</a></li>
+                        <li class="nav-item"><a class="nav-link zoomable" href="resume.html">Resume</a></li>
+                        <li class="nav-item"><a class="nav-link zoomable" href="contact.html">Contact</a></li>
+                    </ul>
+                </div>
+
+                <div id="right-icons" class="d-flex ms-auto ms-auto align-items-center">
+                    <ul class="d-flex align-items-center list-unstyled mb-0">
+                        <!-- Dark mode toggle button -->
+                        <li id="theme-toggle-container">
+                            <button id="theme-toggle" aria-label="Toggle dark mode">
+                                <i id="theme-icon" class="fas "></i>
+                            </button>
+                        </li>
+                        <li id="linkedin" class="me-3">
+                            <a href="https://www.linkedin.com/in/arnab-das-utsa-0b57a81a4/" target="_blank">
+                                <img src="https://cdn-icons-png.freepik.com/128/3536/3536569.png" alt="LinkedIn"
+                                    width="30" height="30">
+                            </a>
+                        </li>
+                        <li id="github">
+                            <a href="https://github.com/iUtsa" target="_blank">
+                                <img src="https://img.icons8.com/?size=100&id=12599&format=png" alt="GitHub" width="30"
+                                    height="30">
+                            </a>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+
+
+    <div>
+
+        <div id="intro-img">
+            <div id="first-box">
+                <h1>Hello world!!! This is<br><b>Arnab Das Utsa!</b></h1>
+                <p>currently I am...</p>
+            </div>
+
+            <div id="image-container">
+                <div class="image-card">
+                    <div class="image-front">
+                        <img src="https://media.licdn.com/dms/image/v2/D4E03AQHNwcPFWaRY-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715583073177?e=1737590400&v=beta&t=CwvENbyrtSDaz26_99m_oJraTVH58KvpsZ9bA-fBr2I"
+                            alt="Front Image">
+                    </div>
+                    <div class="image-back">
+                        <img src="https://github.com/iUtsa/iUtsa-website-/blob/main/images/IMG_0922.jpeg?raw=true"
+                            alt="Back Image">
+                    </div>
+                </div>
+            </div>
+
+        </div>
+
+        <div id="overview">
+            <ul>
+                <li class="overview-list"><i class="fa-solid fa-user-graduate"></i>Persuing my BSc. ,majoring in
+                    Computer
+                    Science at Stockton University</li>
+                <li class="overview-list"><i class="fa-solid fa-chalkboard-user"></i>Working as a Computer Science Tutor
+                    at
+                    Stockton Tutoring Center</li>
+                <li class="overview-list"><i class="fa-brands fa-researchgate"></i>A Student researcher in Medical
+                    Computing
+                    and Artificial Intelligence</li>
+                <li class="overview-list"><i class="fa-solid fa-globe"></i>Founding Vice-President of Stockton
+                    International
+                    Student Organization(ISO)</li>
+                <li class="overview-list"><i class="fa-solid fa-glasses"></i>Peer Mentor at Success Scholars Program ,
+                    Stockton University</li>
             </ul>
-          </div>
-
-            <div id="right-icons" class="d-flex ms-auto ms-auto align-items-center">
-                <ul class="d-flex align-items-center list-unstyled mb-0">
-                  <li id="linkedin" class="me-3">
-                    <a href="https://www.linkedin.com/in/arnab-das-utsa-0b57a81a4/" target="_blank">
-                      <img src="https://cdn-icons-png.freepik.com/128/3536/3536569.png" alt="LinkedIn" width="30" height="30">
-                    </a>
-                  </li>
-                  <li id="github">
-                    <a href="https://github.com/iUtsa" target="_blank">
-                      <img src="https://img.icons8.com/?size=100&id=12599&format=png" alt="GitHub" width="30" height="30">
-                    </a>
-                  </li>
-                </ul>
-              </div>
-            </div>
-        </div>
-        </nav>
-        
-
-        <div>
-
-    <div id="intro-img">
-        <div id="first-box">
-            <h1>Hello world!!! This is<br><b>Arnab Das Utsa!</b></h1>
-            <p>currently I am...</p>
         </div>
 
-        <div id="image-container">
-            <div class="image-card">
-                <div class="image-front">
-                    <img src="https://media.licdn.com/dms/image/v2/D4E03AQHNwcPFWaRY-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715583073177?e=1737590400&v=beta&t=CwvENbyrtSDaz26_99m_oJraTVH58KvpsZ9bA-fBr2I" alt="Front Image">
+        <div id="edu">
+            <h2>Education</h2>
+        </div>
+        <div id="edu-box">
+            <div id="schools">
+                <div class="school">
+                    <img id="stock" src="https://stockton.edu/relations/brand-guide/images/athletics-s-logo.png">
+                    <h2><b>Stockton University</b></h2>
+                    <p>Bachelor's of Science in Computer Science</p>
+                    <p>Sept 2022-Dec 2025(expected)</p>
+                    <p>Galloway, NJ, USA</p>
                 </div>
-                <div class="image-back">
-                    <img src="https://github.com/iUtsa/iUtsa-website-/blob/main/images/IMG_0922.jpeg?raw=true" alt="Back Image">
+
+                <div class="school">
+                    <img id="mc" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/MCCOLLEGE.jpg?20230817202202">
+                    <h2><b>M.C. College, Sylhet</b></h2>
+                    <p>Background: Science</p>
+                    <p>H.S.C GPA- 5.00/5.00</p>
+                    <p>Graduated: July 2019</p>
+                    <p>Sylhet, Bangladesh</p>
                 </div>
             </div>
         </div>
-        
-    </div>
-
-    <div id="overview">
-        <ul>
-            <li class="overview-list"><i class="fa-solid fa-user-graduate"></i>Persuing my BSc. ,majoring in Computer
-                Science at Stockton University</li>
-            <li class="overview-list"><i class="fa-solid fa-chalkboard-user"></i>Working as a Computer Science Tutor at
-                Stockton Tutoring Center</li>
-            <li class="overview-list"><i class="fa-brands fa-researchgate"></i>A Student researcher in Medical Computing
-                and Artificial Intelligence</li>
-            <li class="overview-list"><i class="fa-solid fa-globe"></i>Founding Vice-President of Stockton International
-                Student Organization(ISO)</li>
-            <li class="overview-list"><i class="fa-solid fa-glasses"></i>Peer Mentor at Success Scholars Program ,
-                Stockton University</li>
-        </ul>
-    </div>
-
-    <div id="edu">
-        <h2>Education</h2>
-    </div>
-    <div id="edu-box">
-        <div id="schools">
-            <div class="school">
+        <div id="experience">
+            <h2>Experience</h2>
+        </div>
+        <div class="experience-box1">
+            <div>
                 <img id="stock" src="https://stockton.edu/relations/brand-guide/images/athletics-s-logo.png">
-                <h2><b>Stockton University</b></h2>
-                <p>Bachelor's of Science in Computer Science</p>
-                <p>Sept 2022-Dec 2025(expected)</p>
-                <p>Galloway, NJ, USA</p>
             </div>
-
-            <div class="school">
-                <img id="mc" src="https://upload.wikimedia.org/wikipedia/commons/b/b9/MCCOLLEGE.jpg?20230817202202">
-                <h2><b>M.C. College, Sylhet</b></h2>
-                <p>Background: Science</p>
-                <p>H.S.C GPA- 5.00/5.00</p>
-                <p>Graduated: July 2019</p>
-                <p>Sylhet, Bangladesh</p>
+            <div id="job">
+                <h2 id="job-institute"><b>Stockton University</b></h2>
+                <h2 id="position"><i>Computer Science Tutor</i></h2>
+                <h2 id="date">Sept 2022 - Present</h2>
+                <p>- Teach Java, C++ for problem solving
+                    - Provide knowledge of OOP(Object Oriented Programming)
+                    - Help student to build OOP programs (Projects)
+                    - Coach Problem solving for programming contests
+                    - Conceptual Solutions for Data Structure and Algorithms</p>
             </div>
         </div>
-    </div>
-    <div id="experience">
-        <h2>Experience</h2>
-    </div>
-    <div class="experience-box1">
-        <div>
-            <img id="stock" src="https://stockton.edu/relations/brand-guide/images/athletics-s-logo.png">
-        </div>
-        <div id="job">
-            <h2 id="job-institute"><b>Stockton University</b></h2>
-            <h2 id="position"><i>Computer Science Tutor</i></h2>
-            <h2 id="date">Sept 2022 - Present</h2>
-            <p>- Teach Java, C++ for problem solving
-                - Provide knowledge of OOP(Object Oriented Programming)
-                - Help student to build OOP programs (Projects)
-                - Coach Problem solving for programming contests
-                - Conceptual Solutions for Data Structure and Algorithms</p>
-        </div>
-    </div>
-    <div class="experience-box2">
-        <div>
-            <img id="stock" src="https://stockton.edu/relations/brand-guide/images/athletics-s-logo.png">
-        </div>
-        <div id="job">
-            <h2 id="job-institute"><b>Stockton University</b></h2>
-            <h2 id="position"><i>Math Workshop Tutor</i></h2>
-            <h2 id="date">Sept 2022 - Present</h2>
-            <p>- Teach Calculus, Linear Algebra, Discrete Mathematics
-                - Provide knowledge of Mathematical Logic
-                - Help student to build Mathematical proofs
-                - Coach Problem solving for Mathematical contests
-                - Conceptual Solutions for Mathematical problems</p>
-        </div>
-
-    </div>
-    <div class="experience-box3">
-        <div>
-            <img id="stock" src="https://stockton.edu/residential-life/images/combinedlivestockton.jpg">
-        </div>
-        <div id="job">
-            <h2 id="job-institute"><b>Stockton University</b></h2>
-            <h2 id="position"><i>ResLife Operations</i></h2>
-            <h2 id="date">Sept 2024 - Present</h2>
-            <p>- Provided administrative support by accurate student housing records.
-                Delivered exceptional customer service on campus resources.
-                Supported the planning and execution of residence life events.
-                Conducted room inspections, reported maintenance issues, and coordinated repairs with the facilities
-                team.Assisted in conflict resolution among residents.</p>
-        </div>
-
-    </div>
-
-    <div id="skills-box">
-        <h2>Skills</h2>
-
-        <div class="skill-list">
-            <div id="languages">
-                <div id="lang">
-                    <h3>Languages</h3>
-                </div>
-                <div>
-                    <ul id="icon-container">
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=40669&format=png" alt="C++">
-                            <p id="la">C++</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=13679&format=png" alt="Java">
-                            <p id="la">Java</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=40670&format=png" alt="C">
-                            <p id="la">C</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=13441&format=png" alt="Python">
-                            <p id="la">Python</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=20909&format=png" alt="HTML">
-                            <p id="la">HTML</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=21278&format=png" alt="CSS">
-                            <p id="la">CSS</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=108784&format=png" alt="JavaScript">
-                            <p id="la">JavaScript</p>
-                        </li>
-                        <li id="lan">
-                            <img src="https://img.icons8.com/?size=96&id=13406&format=png" alt="SQL">
-                            <p id="la">SQL</p>
-                        </li>
-                    </ul>
-                </div>
+        <div class="experience-box2">
+            <div>
+                <img id="stock" src="https://stockton.edu/relations/brand-guide/images/athletics-s-logo.png">
             </div>
-            <div id="tools">
-                <div id="tool">
-                    <h3>Tools & Technologies</h3>
-                </div>
-                <div>
-                    <ul id="icon-container">
-                        <li>
-                            <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png" alt="React">
-                            <p>React</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=64&id=AksudKrBQryM&format=png" alt="Django">
-                            <p>Django</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=100&id=MHcMYTljfKOr&format=png" alt="Falsk">
-                            <p>Falsk</p>
-                        </li>
+            <div id="job">
+                <h2 id="job-institute"><b>Stockton University</b></h2>
+                <h2 id="position"><i>Math Workshop Tutor</i></h2>
+                <h2 id="date">Sept 2022 - Present</h2>
+                <p>- Teach Calculus, Linear Algebra, Discrete Mathematics
+                    - Provide knowledge of Mathematical Logic
+                    - Help student to build Mathematical proofs
+                    - Coach Problem solving for Mathematical contests
+                    - Conceptual Solutions for Mathematical problems</p>
+            </div>
 
-                        <li>
-                            <img src="https://img.icons8.com/?size=96&id=g9mmSxx3SwAI&format=png" alt="Bootstrap">
-                            <p>Bootstrap</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=96&id=20906&format=png" alt="Git">
-                            <p>Git</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=96&id=17842&format=png" alt="Linux">
-                            <p>Linux</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=96&id=39913&format=png" alt="Oracle DBS">
-                            <p>Oracle DBS</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=96&id=PZQVBAxaueDJ&format=png" alt="ExpressJS">
-                            <p>ExpressJS</p>
-                        </li>
-                        <li>
-                            <img src="https://img.icons8.com/?size=96&id=33039&format=png" alt="AWS">
-                            <p>AWS</p>
-                        </li>
-                        <li>
-                            <img src="https://spring.io/img/spring-2.svg" alt="Java Spring">
-                            <p>Java Spring</p>
-                        </li>
-                    </ul>
+        </div>
+        <div class="experience-box3">
+            <div>
+                <img id="stock" src="https://stockton.edu/residential-life/images/combinedlivestockton.jpg">
+            </div>
+            <div id="job">
+                <h2 id="job-institute"><b>Stockton University</b></h2>
+                <h2 id="position"><i>ResLife Operations</i></h2>
+                <h2 id="date">Sept 2024 - Present</h2>
+                <p>- Provided administrative support by accurate student housing records.
+                    Delivered exceptional customer service on campus resources.
+                    Supported the planning and execution of residence life events.
+                    Conducted room inspections, reported maintenance issues, and coordinated repairs with the facilities
+                    team.Assisted in conflict resolution among residents.</p>
+            </div>
+
+        </div>
+
+        <div id="skills-box">
+            <h2>Skills</h2>
+
+            <div class="skill-list">
+                <div id="languages">
+                    <div id="lang">
+                        <h3>Languages</h3>
+                    </div>
+                    <div>
+                        <ul id="icon-container">
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=40669&format=png" alt="C++">
+                                <p id="la">C++</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=13679&format=png" alt="Java">
+                                <p id="la">Java</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=40670&format=png" alt="C">
+                                <p id="la">C</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=13441&format=png" alt="Python">
+                                <p id="la">Python</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=20909&format=png" alt="HTML">
+                                <p id="la">HTML</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=21278&format=png" alt="CSS">
+                                <p id="la">CSS</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=108784&format=png" alt="JavaScript">
+                                <p id="la">JavaScript</p>
+                            </li>
+                            <li id="lan">
+                                <img src="https://img.icons8.com/?size=96&id=13406&format=png" alt="SQL">
+                                <p id="la">SQL</p>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+                <div id="tools">
+                    <div id="tool">
+                        <h3>Tools & Technologies</h3>
+                    </div>
+                    <div>
+                        <ul id="icon-container">
+                            <li>
+                                <img src="https://cdn4.iconfinder.com/data/icons/logos-3/600/React.js_logo-1024.png"
+                                    alt="React">
+                                <p>React</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=64&id=AksudKrBQryM&format=png" alt="Django">
+                                <p>Django</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=100&id=MHcMYTljfKOr&format=png" alt="Falsk">
+                                <p>Falsk</p>
+                            </li>
+
+                            <li>
+                                <img src="https://img.icons8.com/?size=96&id=g9mmSxx3SwAI&format=png" alt="Bootstrap">
+                                <p>Bootstrap</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=96&id=20906&format=png" alt="Git">
+                                <p>Git</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=96&id=17842&format=png" alt="Linux">
+                                <p>Linux</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=96&id=39913&format=png" alt="Oracle DBS">
+                                <p>Oracle DBS</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=96&id=PZQVBAxaueDJ&format=png" alt="ExpressJS">
+                                <p>ExpressJS</p>
+                            </li>
+                            <li>
+                                <img src="https://img.icons8.com/?size=96&id=33039&format=png" alt="AWS">
+                                <p>AWS</p>
+                            </li>
+                            <li>
+                                <img src="https://spring.io/img/spring-2.svg" alt="Java Spring">
+                                <p>Java Spring</p>
+                            </li>
+                        </ul>
+                    </div>
                 </div>
             </div>
         </div>
-    </div>
     </div>
     <!-- Rocket, Planet, and Astronaut Scene -->
     <div class="scene">
@@ -297,20 +310,121 @@
             <span class="message">Hi!</span>
         </div>
     </div>
-    
+
+    <div class="comet-container">
+        <div class="comet"></div>
+        <div class="comet"></div>
+        <div class="comet"></div>
+        <div class="comet"></div>
+    </div>
     
 
-    
+
 
 
 
     <div id="bottom-bar">
         <p>© All Rights Reserved by Arnab Das Utsa<br>
             Created with HTML5/CSS, JS, and Bootstrap 4 | Hosted on GitHub.com </p>
-        
-    </div>
 
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
+    </div>
+    <script>
+
+        document.addEventListener("DOMContentLoaded", function () {
+            const themeToggleButton = document.getElementById("theme-toggle");
+            const themeIcon = document.getElementById("theme-icon");
+        
+            // Remove duplicate theme-toggle buttons, if any
+            const duplicateButtons = document.querySelectorAll("#theme-toggle-container");
+            if (duplicateButtons.length > 1) {
+                for (let i = 1; i < duplicateButtons.length; i++) {
+                    duplicateButtons[i].remove();
+                }
+            }
+        
+            // Check if dark mode was enabled previously
+            const darkModeEnabled = localStorage.getItem("dark-mode") === "true";
+        
+            function enableDarkMode() {
+                document.body.classList.add("dark-mode");
+                themeIcon.textContent = "☀️"; // Sun icon
+                localStorage.setItem("dark-mode", "true");
+            }
+        
+            function disableDarkMode() {
+                document.body.classList.remove("dark-mode");
+                themeIcon.textContent = "🌙"; // Moon icon
+                localStorage.setItem("dark-mode", "false");
+            }
+        
+            if (darkModeEnabled) {
+                enableDarkMode();
+            } else {
+                disableDarkMode();
+            }
+        
+            themeToggleButton.addEventListener("click", function () {
+                if (document.body.classList.contains("dark-mode")) {
+                    disableDarkMode();
+                } else {
+                    enableDarkMode();
+                }
+            });
+        });
+        
+        
+        
+        //rocket
+        
+        document.addEventListener("DOMContentLoaded", () => {
+            const rocket = document.querySelector('.rocket');
+            const marsPlanet = document.querySelector('.mars-planet');
+        
+            // Array of radial gradients for the Mars planet
+            const gradients = [
+                "radial-gradient(circle at 30% 30%, #d9d9d9, #a9a9a9, #707070)", // Initial gradient
+                "radial-gradient(circle at 30% 30%, #ffa500, #ff4500, #8b0000)", // Mars-like
+                "radial-gradient(circle at 30% 30%, #00ff7f, #228b22, #006400)", // Jupiter-like
+                "radial-gradient(circle at 30% 30%, #87cefa, #4682b4, #1e90ff)", // Saturn-like
+                "radial-gradient(circle at 30% 30%, #fffacd, #ffdead, #daa520)"  // Neptune-like
+            ];
+            let gradientIndex = 0; // Current gradient index
+        
+            // Function to change the Mars planet's gradient
+            function changeMarsPlanetGradient() {
+                gradientIndex = (gradientIndex + 1) % gradients.length; // Cycle through gradients
+                marsPlanet.style.background = gradients[gradientIndex];
+                console.log(`Gradient changed to: ${gradients[gradientIndex]}`); // Debugging log
+            }
+        
+            // Function to start the rocket animation
+            function startRocketAnimation() {
+                // Reset the animation by removing and re-adding the class
+                rocket.style.animation = "none"; // Stop any existing animation
+                setTimeout(() => {
+                    rocket.style.animation = "moveRocketToPlanet 8s ease-in-out forwards"; // Restart animation
+                }, 10); // Small delay to reset animation
+            }
+        
+            // Listen for the animationend event
+            rocket.addEventListener("animationend", () => {
+                console.log("Rocket landed. Changing Mars gradient..."); // Debugging log
+                changeMarsPlanetGradient(); // Change the planet's gradient after landing
+                startRocketAnimation(); // Restart the rocket animation
+            });
+        
+            // Start the initial animation
+            startRocketAnimation();
+        });
+        
+        
+            </script>
+
+    
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+        crossorigin="anonymous"></script>
 
 </body>
 
