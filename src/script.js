@@ -89,20 +89,37 @@ addCardsWithDelay('socialMediaContainer', socialMediaData);
 document.addEventListener("DOMContentLoaded", () => {
     const rocket = document.querySelector('.rocket');
     const marsPlanet = document.querySelector('.mars-planet');
-    const astronaut = document.querySelector('.astronaut');
 
-    rocket.addEventListener('animationend', () => {
-        // After the rocket stops near the mars-planet, show the astronaut
-        const rocketRect = rocket.getBoundingClientRect();
-        const marsPlanetRect = marsPlanet.getBoundingClientRect();
+    // Array of radial gradients for the Mars planet
+    const gradients = [
+        "radial-gradient(circle at 30% 30%, #d9d9d9, #a9a9a9, #707070)", // Initial gradient
+        "radial-gradient(circle at 30% 30%, #ffa500, #ff4500, #8b0000)", // Gradient 1
+        "radial-gradient(circle at 30% 30%, #00ff7f, #228b22, #006400)", // Gradient 2
+        "radial-gradient(circle at 30% 30%, #87cefa, #4682b4, #1e90ff)", // Gradient 3
+        "radial-gradient(circle at 30% 30%, #fffacd, #ffdead, #daa520)"  // Gradient 4
+    ];
+    let gradientIndex = 0; // Current gradient index
 
-        if (
-            rocketRect.right >= marsPlanetRect.left &&
-            rocketRect.bottom <= marsPlanetRect.bottom
-        ) {
-            astronaut.style.opacity = 1; // Show the astronaut waving "Hi!"
-        }
+    // Function to change the Mars planet's gradient
+    function changeMarsPlanetGradient() {
+        gradientIndex = (gradientIndex + 1) % gradients.length; // Cycle through gradients
+        marsPlanet.style.background = gradients[gradientIndex];
+        console.log(`Gradient changed to: ${gradients[gradientIndex]}`); // Debugging log
+    }
+
+    // Function to start the rocket animation
+    function startRocketAnimation() {
+        rocket.style.animation = "moveRocketToPlanet 8s ease-in-out forwards";
+    }
+
+    // Listen for the animationend event
+    rocket.addEventListener("animationend", () => {
+        console.log("Rocket landed. Changing Mars gradient..."); // Debugging log
+        changeMarsPlanetGradient(); // Change the planet's gradient after landing
     });
+
+    // Start the animation
+    startRocketAnimation();
 });
 
 
