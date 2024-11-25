@@ -9,6 +9,7 @@
     <meta name="author" content="Arnab Das Utsa">
     <meta property="og:image" content="https://media.licdn.com/dms/image/v2/D4E03AQHNwcPFWaRY-w/profile-displayphoto-shrink_800_800/profile-displayphoto-shrink_800_800/0/1715583073177?e=1732147200&v=beta&t=5cxs8FlFy49Dl4cG6dGsaS-HHW4x6vK-1i0d1joWHJA">
     <title>iUtsa</title>
+    <link rel="icon" href="https://img.icons8.com/?size=96&id=80976&format=png" type="image/x-icon">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="stylesheet" href="styles.css">
@@ -182,8 +183,12 @@ document.addEventListener("DOMContentLoaded", () => {
         body.classList.add(savedTheme);
         updateIcon(savedTheme);
         if (savedTheme === 'dark-mode') {
-            addSpaceElements(); // Add space elements for dark mode
+            addSpaceElements();
         }
+    } else {
+        // Default to light mode if no theme is saved
+        localStorage.setItem('theme', 'light-mode');
+        updateIcon('light-mode');
     }
 
     // Toggle dark mode
@@ -192,33 +197,32 @@ document.addEventListener("DOMContentLoaded", () => {
             body.classList.remove('dark-mode');
             localStorage.setItem('theme', 'light-mode');
             updateIcon('light-mode');
-            removeSpaceElements(); // Remove space elements when switching to light mode
+            removeSpaceElements();
         } else {
             body.classList.add('dark-mode');
             localStorage.setItem('theme', 'dark-mode');
             updateIcon('dark-mode');
-            addSpaceElements(); // Add space elements when switching to dark mode
+            addSpaceElements();
         }
-
-        // Add any additional logic here
-        console.log(`Theme changed to: ${body.classList.contains('dark-mode') ? 'Dark Mode' : 'Light Mode'}`);
     });
 
     // Function to update the theme icon
     function updateIcon(theme) {
-        themeIcon.textContent = theme === 'dark-mode' ? '☀️' : '🌙'; // Update icon based on theme
+        if (theme === 'dark-mode') {
+            themeIcon.textContent = '☀️'; // Sun icon
+        } else {
+            themeIcon.textContent = '🌙'; // Moon icon
+        }
     }
 
-    // Function to add space elements for dark mode
+    // Function to add space elements (if applicable)
     function addSpaceElements() {
-        // Add your comet, planet, or other space-related animations here
-        console.log('Adding space elements for dark mode');
+        // Add your logic for space elements here
     }
 
-    // Function to remove space elements for light mode
+    // Function to remove space elements (if applicable)
     function removeSpaceElements() {
-        // Remove your space-related animations or elements here
-        console.log('Removing space elements for light mode');
+        // Add your logic for removing space elements here
     }
 });
 
