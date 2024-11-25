@@ -1,7 +1,11 @@
+html {
+    scroll-behavior: smooth;
+}
+
 body {
     margin: 0;
     font-family: 'Josefin Sans', sans-serif !important;
-    transition: background-color 0.5s, background-image 0.5s;
+    transition: background-color 0.3s ease, color 0.3s ease;
 
     /* Default (light mode) styles */
     background-color: #e4e3e3;
@@ -9,10 +13,12 @@ body {
     width: 100%;
     background-repeat: repeat; /* Ensure the image repeats */
     background-size: auto; /* Default sizing */
+    will-change: background-color, color;
 }
 
 /* Dark mode base setup */
 /* Allow scrolling and maintain the space theme */
+/* General dark mode styling */
 body.dark-mode {
     background-color: #000; /* Space background */
     background-image: 
@@ -24,8 +30,16 @@ body.dark-mode {
     background-repeat: repeat, repeat, repeat, no-repeat;
     position: relative;
     overflow-y: auto;
-    
 }
+
+/* Media query for smaller screens */
+@media (max-width: 768px) {
+    body.dark-mode {
+        background-size: 25px 25px, 50px 50px, 1px 1px, auto; /* Adjust star size and density for smaller screens */
+        background-position: center; /* Ensure proper centering on smaller screens */
+    }
+}
+
 
 body.dark-mode::before, 
 body.dark-mode::after {
@@ -2663,3 +2677,5 @@ body.dark-mode  h2{
 body.dark-mode .comet-container {
     display: block; /* Show comets only in dark mode */
 }
+
+

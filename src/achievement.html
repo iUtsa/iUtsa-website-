@@ -213,19 +213,7 @@
         </div>
     </div>
 
-    <div class="scene">
-        <div class="mars-planet"></div>
-        <div class="rocket">
-            <div class="baidi"></div>
-            <div class="window"></div>
-            <div class="fins"></div>
-            <div class="exhaust"></div>
-        </div>
-        <div class="astronaut">
-            <div class="astronaut-body"></div>
-            <span class="message">Hi!</span>
-        </div>
-    </div>
+   
 
     <div class="comet-container">
         <div class="comet"></div>
@@ -242,94 +230,57 @@
 
     <script>
 
-        document.addEventListener("DOMContentLoaded", function () {
-            const themeToggleButton = document.getElementById("theme-toggle");
-            const themeIcon = document.getElementById("theme-icon");
-        
-            // Remove duplicate theme-toggle buttons, if any
-            const duplicateButtons = document.querySelectorAll("#theme-toggle-container");
-            if (duplicateButtons.length > 1) {
-                for (let i = 1; i < duplicateButtons.length; i++) {
-                    duplicateButtons[i].remove();
-                }
-            }
-        
-            // Check if dark mode was enabled previously
-            const darkModeEnabled = localStorage.getItem("dark-mode") === "true";
-        
-            function enableDarkMode() {
-                document.body.classList.add("dark-mode");
-                themeIcon.textContent = "☀️"; // Sun icon
-                localStorage.setItem("dark-mode", "true");
-            }
-        
-            function disableDarkMode() {
-                document.body.classList.remove("dark-mode");
-                themeIcon.textContent = "🌙"; // Moon icon
-                localStorage.setItem("dark-mode", "false");
-            }
-        
-            if (darkModeEnabled) {
-                enableDarkMode();
-            } else {
-                disableDarkMode();
-            }
-        
-            themeToggleButton.addEventListener("click", function () {
-                if (document.body.classList.contains("dark-mode")) {
-                    disableDarkMode();
-                } else {
-                    enableDarkMode();
-                }
-            });
-        });
-
-
-
-//rocket
-
 document.addEventListener("DOMContentLoaded", () => {
-    const rocket = document.querySelector('.rocket');
-    const marsPlanet = document.querySelector('.mars-planet');
+    const themeToggle = document.getElementById('theme-toggle');
+    const themeIcon = document.getElementById('theme-icon');
+    const body = document.body;
 
-    // Array of radial gradients for the Mars planet
-    const gradients = [
-        "radial-gradient(circle at 30% 30%, #d9d9d9, #a9a9a9, #707070)", // Initial gradient
-        "radial-gradient(circle at 30% 30%, #ffa500, #ff4500, #8b0000)", // Mars-like
-        "radial-gradient(circle at 30% 30%, #00ff7f, #228b22, #006400)", // Jupiter-like
-        "radial-gradient(circle at 30% 30%, #87cefa, #4682b4, #1e90ff)", // Saturn-like
-        "radial-gradient(circle at 30% 30%, #fffacd, #ffdead, #daa520)"  // Neptune-like
-    ];
-    let gradientIndex = 0; // Current gradient index
-
-    // Function to change the Mars planet's gradient
-    function changeMarsPlanetGradient() {
-        gradientIndex = (gradientIndex + 1) % gradients.length; // Cycle through gradients
-        marsPlanet.style.background = gradients[gradientIndex];
-        console.log(`Gradient changed to: ${gradients[gradientIndex]}`); // Debugging log
+    // Check for saved theme in localStorage
+    const savedTheme = localStorage.getItem('theme');
+    if (savedTheme) {
+        body.classList.add(savedTheme);
+        updateIcon(savedTheme);
+        if (savedTheme === 'dark-mode') {
+            addSpaceElements(); // Add space elements for dark mode
+        }
     }
 
-    // Function to start the rocket animation
-    function startRocketAnimation() {
-        // Reset the animation by removing and re-adding the class
-        rocket.style.animation = "none"; // Stop any existing animation
-        setTimeout(() => {
-            rocket.style.animation = "moveRocketToPlanet 8s ease-in-out forwards"; // Restart animation
-        }, 10); // Small delay to reset animation
-    }
+    // Toggle dark mode
+    themeToggle.addEventListener('click', () => {
+        if (body.classList.contains('dark-mode')) {
+            body.classList.remove('dark-mode');
+            localStorage.setItem('theme', 'light-mode');
+            updateIcon('light-mode');
+            removeSpaceElements(); // Remove space elements when switching to light mode
+        } else {
+            body.classList.add('dark-mode');
+            localStorage.setItem('theme', 'dark-mode');
+            updateIcon('dark-mode');
+            addSpaceElements(); // Add space elements when switching to dark mode
+        }
 
-    // Listen for the animationend event
-    rocket.addEventListener("animationend", () => {
-        console.log("Rocket landed. Changing Mars gradient..."); // Debugging log
-        changeMarsPlanetGradient(); // Change the planet's gradient after landing
-        startRocketAnimation(); // Restart the rocket animation
+        // Add any additional logic here
+        console.log(`Theme changed to: ${body.classList.contains('dark-mode') ? 'Dark Mode' : 'Light Mode'}`);
     });
 
-    // Start the initial animation
-    startRocketAnimation();
+    // Function to update the theme icon
+    function updateIcon(theme) {
+        themeIcon.textContent = theme === 'dark-mode' ? '☀️' : '🌙'; // Update icon based on theme
+    }
+
+    // Function to add space elements for dark mode
+    function addSpaceElements() {
+        // Add your comet, planet, or other space-related animations here
+        console.log('Adding space elements for dark mode');
+    }
+
+    // Function to remove space elements for light mode
+    function removeSpaceElements() {
+        // Remove your space-related animations or elements here
+        console.log('Removing space elements for light mode');
+    }
 });
 
-        
             </script>
         
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js" integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz" crossorigin="anonymous"></script>
